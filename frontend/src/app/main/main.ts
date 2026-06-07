@@ -18,8 +18,6 @@ export class Main {
     { name: 'Brenda', image: 'personicon.jpg', route:'/profile/brenda' }
   ];
 
-  
-
   goToProfile(route: string) {
     this.router.navigate([route]);
   }
