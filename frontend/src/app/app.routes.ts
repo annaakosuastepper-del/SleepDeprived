@@ -8,7 +8,6 @@ import { ProfileBrenda } from './profile-brenda/profile-brenda';
 
 export const routes: Routes = [
 {path: '', component: Login, pathMatch: 'full'},
-
 {path: 'main', component: Main},
 {path: 'profile/hari', component: ProfileHari},
 {path: 'profile/brenda', component: ProfileBrenda},

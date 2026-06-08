@@ -1,1 +1,32 @@
-<p>nav works!</p>
+
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Projects</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <button class="nav-link dropdown-toggle" data-bs-collapse="dropdown" data-bs-target="#navbarNavDropdown">
+          Profiles
+        </button>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/profile-anna">Anna</a>
+          <a class="dropdown-item" routerLink="/profile-haripriya">Haripriya</a>
+          <a class="dropdown-item" routerLink="/profile-brenda">Brenda</a>
+          <a class="dropdown-item" routerLink="/profile-nina">Nina</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
