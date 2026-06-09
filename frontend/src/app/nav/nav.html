@@ -16,14 +16,14 @@
       </li>
       
       <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" data-bs-collapse="dropdown" data-bs-target="#navbarNavDropdown">
+        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#navbarNavDropdown">
           Profiles
         </button>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/profile-anna">Anna</a>
-          <a class="dropdown-item" routerLink="/profile-haripriya">Haripriya</a>
-          <a class="dropdown-item" routerLink="/profile-brenda">Brenda</a>
-          <a class="dropdown-item" routerLink="/profile-nina">Nina</a>
+          <a class="dropdown-item" (click)="navigateToProfile('anna')">Anna</a>
+          <a class="dropdown-item" (click)="navigateToProfile('hari')">Haripriya</a>
+          <a class="dropdown-item" (click)="navigateToProfile('brenda')">Brenda</a>
+          <a class="dropdown-item" (click)="navigateToProfile('nina')">Nina</a>
         </div>
       </li>
     </ul>

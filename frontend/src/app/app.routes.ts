@@ -14,4 +14,5 @@ export const routes: Routes = [
 {path: 'profile/anna', component: ProfileAnna},
 {path: 'profile/nina', component: ProfileNina}
 
+
 ]
