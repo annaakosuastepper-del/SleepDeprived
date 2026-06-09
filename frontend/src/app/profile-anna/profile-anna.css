@@ -1,0 +1,64 @@
+.profile-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows:minmax(100px, auto);
+  gap: 20px;
+  padding: 20px;
+  Background-color: #ae2424;
+}
+
+.profile-left {
+  display: grid;
+  grid-row: 1/6;
+  align-items: center;
+  gap: 20px;
+  background-color: #1da779;
+}
+
+.profile-right{
+    display: grid;
+    grid-row: 1/6;
+    gap: 10px;
+    background-color: #2391b5;
+}
+
+.profile-pic{
+    background-color: #a71da2;
+    text-align: center;
+    height: 250px;
+    width: 450px;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.profile-role{
+    background-color: #a71d57;
+    text-align: center;
+    height: 250px;
+    width: 450px;
+    margin: 10px;
+}
+
+.profile-name{
+    background-color: #49a71d;
+    text-align: center;
+    height: 100px;
+    width: 450px;
+    margin: 10px;
+}
+
+.profile-bio{
+    background-color: #1da779;
+    text-align: center;
+    height: 200px;
+    width: 450px;
+    margin: 10px;
+}
+
+.profile-files{
+    background-color: #a71d70;
+    text-align: center;
+    height: 200px;
+    width: 450px;
+    margin: 10px;
+}
