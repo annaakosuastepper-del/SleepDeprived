@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { Nav } from "../nav/nav";
 
 @Component({
   selector: 'app-main',
-  imports: [],
+  imports: [Nav, RouterLink],
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
@@ -20,6 +21,10 @@ export class Main {
 
   goToProfile(route: string) {
     this.router.navigate([route]);
+  }
+
+  goTo(){
+    this.router.navigate(['/project-boardgame']);
   }
 
  

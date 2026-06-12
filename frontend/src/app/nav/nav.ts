@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './nav.html',
   styleUrl: './nav.css',
 })
@@ -14,6 +14,10 @@ export class Nav {
 
   navigateToProfile(name: string) {
     this.router.navigate(['/profile', name]);
+  }
+
+  navigateToProject(name: string){
+    this.router.navigate(['/project', name]);
   }
   
 }

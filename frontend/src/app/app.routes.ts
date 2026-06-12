@@ -5,6 +5,7 @@ import { ProfileHari } from './profile-hari/profile-hari';
 import { ProfileNina } from './profile-nina/profile-nina';
 import { ProfileAnna } from './profile-anna/profile-anna';
 import { ProfileBrenda } from './profile-brenda/profile-brenda';
+import { ProjectBoardgame } from './project-boardgame/project-boardgame';
 
 export const routes: Routes = [
 {path: '', component: Login, pathMatch: 'full'},
@@ -12,7 +13,9 @@ export const routes: Routes = [
 {path: 'profile/hari', component: ProfileHari},
 {path: 'profile/brenda', component: ProfileBrenda},
 {path: 'profile/anna', component: ProfileAnna},
-{path: 'profile/nina', component: ProfileNina}
+{path: 'profile/nina', component: ProfileNina},
+{ path: 'project-boardgame', component: ProjectBoardgame}
+
 
 
 ]
