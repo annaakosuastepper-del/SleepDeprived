@@ -14,7 +14,7 @@ export const routes: Routes = [
 {path: 'profile/brenda', component: ProfileBrenda},
 {path: 'profile/anna', component: ProfileAnna},
 {path: 'profile/nina', component: ProfileNina},
-{ path: 'project-boardgame', component: ProjectBoardgame}
+{path: 'project-boardgame', component: ProjectBoardgame}
 
 
 

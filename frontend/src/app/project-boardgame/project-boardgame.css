@@ -1,4 +1,55 @@
 .body{
-    display: grid 
-    
+  gap: 20px;
+  background-color: #1da779;
 }
+
+.name{
+    
+    background-color: aqua;
+    text-align: center;
+     width: 100%;
+}
+
+.gamelogo{
+    border-radius: 10px;
+    height: 250px;
+    
+    background-color: blueviolet;
+}
+
+.whatis{
+    margin-left: 200px;
+   
+    border-radius: 10px;
+    height: 250px;
+    background-color:chocolate;
+    padding: 10px;
+}
+
+.timeline{
+   margin-right: 20px;
+    background-color: coral;
+    height: 500px;
+   
+    border-radius: 10px;
+
+}
+
+.Minigames{
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: rgb(154, 34, 114);
+}
+
+.picMini{
+    grid-row: 3;
+    border-radius: 10px;
+    height: 250px;
+    margin-left: 200px;
+    background-color: rgb(226, 43, 116);
+}
+
+.gameplay{
+    background-color: pink;
+} 
