@@ -126,7 +126,9 @@
     text-align: center;
     height: 200px;
     margin: 10px;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:10px;
 }
 
 
@@ -134,8 +136,8 @@
     background-color: #1da779;
     text-align: center;
     height: 50px;
-    width: 200px;
     margin: 10px;
+    grid-column: 1;
     
 }
 
@@ -143,16 +145,18 @@
     background-color: #1da779;
     text-align: center;
     height: 50px;
-    width: 200px;
     margin: 10px;
+    grid-column: 2;
+
     
 }
 
 .file3{
-    background-color: #1da779;
+    background-color: #265143;
     text-align: center;
     height: 50px;
-    width: 200px;
     margin: 10px;
+        grid-column: 3;
+
     
 }
