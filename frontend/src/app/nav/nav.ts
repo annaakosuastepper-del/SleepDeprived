@@ -16,8 +16,6 @@ export class Nav {
     this.router.navigate(['/profile', name]);
   }
 
-  navigateToProject(name: string){
-    this.router.navigate(['/project', name]);
-  }
+
   
 }

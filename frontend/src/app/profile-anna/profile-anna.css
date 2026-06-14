@@ -1,5 +1,7 @@
 
-
+*{
+    font-family:Arial,sans-serif;
+}
 .profile-name{
     background-color: #49a71d;
     text-align: center;
