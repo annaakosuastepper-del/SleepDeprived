@@ -7,24 +7,6 @@
     margin: 10px;
 }
 
-.profile-Top {
-  display: grid;
-  grid-row: 1;
-  grid-column: 1/ -1;
-  align-items: center;
-  gap: 20px;
-  background-color: #1da779;
-}
-
-.m1{
-    display: grid;
-    grid-row: 2;
-    grid-column: 1/-1;
-    gap: 10px;
-    background-color: #5a8a9a;
-     grid-template-columns: 1fr 1fr;
-}
-
 
 .profile-pic{
     background-color: #a71da2;
@@ -38,23 +20,14 @@
     background-color: #a71d57;
     text-align: center;
     margin: 10px;
-    margin-left: -150px;
+    height: 300px;
 }
 
-.m2{
-    display: grid;
-    grid-row: 3;
-    grid-column: 1/-1;
-    gap: 10px;
-    background-color: #5a8a9a;
-     grid-template-columns: 1fr 1fr;
-}
 
 .profile-role{
     background-color: #1da779;
     text-align: center;
     height: 300px;
-    width: 450px;
     margin: 10px;
 }
 .pixel-me{
@@ -67,29 +40,15 @@
 }
 
 
-.profile-cv{
-    background-color: #5a8a9a;
+.cv{
+    background-color: #5c0d62;
     text-align: center;
     grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);  
     height: auto;
     margin: 20px;
 }
 
-.profile-cv .cv{
-    background-color: #a71d57;
-    text-align: center;
-    height: 100px;
-    margin: 10px;
-    grid-column: 1 / -1;
-}
 
-.cv-row{
-     display: grid;
-    gap: 10px;
-    margin-bottom: 10px;
-}
 .box1{
     background-color: #7cb3a1;
     text-align: center;
@@ -127,8 +86,6 @@
     text-align: center;
     height: 200px;
     margin: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap:10px;
 }
 
@@ -138,8 +95,6 @@
     text-align: center;
     height: 50px;
     margin: 10px;
-    grid-column: 1;
-    
 }
 
 .file2{
@@ -147,9 +102,6 @@
     text-align: center;
     height: 50px;
     margin: 10px;
-    grid-column: 2;
-
-    
 }
 
 .file3{
@@ -157,8 +109,5 @@
     text-align: center;
     height: 50px;
     margin: 10px;
-        grid-column: 3;
-
-    
 }
 
