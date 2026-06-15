@@ -1,0 +1,11 @@
+{
+    "username": "Team",
+    "password": "AnnaIsAw3some",
+    "role": "admin"
+}
+
+{
+    "username": "Guest",
+    "password": "SleepDeprivedisAw3some",
+    "role": "viewer"
+}
