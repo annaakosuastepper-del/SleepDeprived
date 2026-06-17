@@ -10,7 +10,7 @@ app.use(express.json());
 app.use('/', routes);
 
 // connect to mongoDB
-mongoose.connect(process.env.DB_CONNECTION, { dbName: process.env.DATABASE });
+mongoose.connect('mongodb://localhost:27017', { dbName: 'sleepdeprived' });
 const db = mongoose.connection;
 db.on('error', err => {
   console.log(err);

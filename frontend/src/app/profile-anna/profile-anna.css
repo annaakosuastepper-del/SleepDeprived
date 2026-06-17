@@ -41,6 +41,11 @@
     
 }
 
+.text-box{
+    background-color: #a71d57;
+    height: auto;
+}
+
 
 .cv{
     background-color: #5c0d62;
@@ -51,38 +56,14 @@
 }
 
 
-.box1{
+.box{
     background-color: #7cb3a1;
     text-align: center;
-    height: 200px;
+    height: 300px;
     margin: 10px;
 }
 
-.box2{
-    background-color: #7cb3a1;
-    text-align: center;
-    height: 200px;
-    margin: 10px;
-}
-.box3{
-    background-color: #7cb3a1;
-    text-align: center;
-    height: 200px;
-    margin: 10px;
-}
-.box4{
-    background-color: #7cb3a1;
-    text-align: center;
-    height: 200px;
-    margin: 10px;
-}
 
-.box5{
-    background-color: #7cb3a1;
-    text-align: center;
-    height: 200px;
-    margin: 10px;
-}
 .box6{
     background-color: #7cb3a1;
     text-align: center;
