@@ -6,7 +6,7 @@ import { Profile} from "./profile";
 })
 
 export class BackendService{
-    apiURL = 'http://localhost: 3000'
+    apiURL = 'http://localhost:3000'
 
     constructor() { }
 
