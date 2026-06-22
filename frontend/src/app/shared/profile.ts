@@ -1,4 +1,7 @@
-import { Service } from '@angular/core';
-
-@Service()
-export class Profile {}
+export interface Profile {
+  bio: string;
+  role: string;
+  profilePicture: string;
+  boxes: { title: string; content: string }[];
+  files: string[];
+}
