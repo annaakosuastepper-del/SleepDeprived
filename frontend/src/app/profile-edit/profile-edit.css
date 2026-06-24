@@ -1,0 +1,14 @@
+.title{
+    text-align: center;
+}
+
+.button-row{
+    margin-top: 100px;
+    background-color: aquamarine;
+}
+
+.type-text-box{
+    margin-top: 10px;
+    height: 200px;
+    background-color: rgb(159, 128, 187);
+}
