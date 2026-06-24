@@ -1,8 +1,9 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { Nav } from "../nav/nav";
 import { Footer } from "../footer/footer";
 import { BackendService } from '../shared/backend';
 import { CommonModule } from '@angular/common';
+import { Profile } from '../shared/profile';
 
 
 
@@ -13,11 +14,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './profile-anna.css',
 })
 export class ProfileAnna implements OnInit {
-   profile: any = null;
+   profile= signal<Profile[]>([]);
 
   backendService = inject(BackendService);
 
   async ngOnInit() {
-    this.profile = await this.backendService.getOne('anna');
+    const data = await this.backendService.getAll();
+    this.profile.set(data);
+    console.log('Service:', this.profile());
   }
 }

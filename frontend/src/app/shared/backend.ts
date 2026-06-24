@@ -10,12 +10,14 @@ export class BackendService{
 
     constructor() { }
 
-    async getAll(): Promise<Profile []> {
+    async getAll(): Promise<Profile[]> {
         let response = await fetch(this.apiURL + '/profiles');
         let profiles = await response.json();
+        console.log('Service:', profiles)
         return profiles;
     }
-      async getOne(name: string): Promise<Profile> {
+
+  async getOne(name: string): Promise<Profile> {
     let response = await fetch(this.apiURL + '/profiles/' + name);
     let profile = await response.json();
     return profile;
