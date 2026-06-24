@@ -32,7 +32,17 @@
     height: 300px;
     margin: 10px;
 }
+
+.title{
+    background-color: #4a99e4;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 100px;
+    
+}
 .pixel-me{
+
     background-color: #1da779;
     text-align: center;
     height: 300px;
@@ -44,6 +54,7 @@
 .text-box{
     background-color: #a71d57;
     height: auto;
+    margin-top: 10px;
 }
 
 
@@ -94,3 +105,7 @@
     margin: 10px;
 }
 
+.pen{
+    width: 50px;
+    background-color: #a71da2;
+}

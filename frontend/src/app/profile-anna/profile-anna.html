@@ -18,12 +18,42 @@
     </div>
 
     <div class="row g-3 mt-2 px-3"> 
+        
+        
+       <div class="col-md-8" >
+            
+                    <div class="col-md-8"  >
+                    
+                     <div class="profile-role" >
+                        <div class="row" >
+                            
+                            <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
+                        
 
-       <div class="col-md-8">
-        <div class="profile-role"> Role 
-            <div class="col-12"> <div class="text-box"> {{profile()[0].role}} </div></div>
-        </div></div> 
-       <div class="col-md-4"> <div class="pixel-me"> Pixel me </div></div> 
+                            <div class="col-2" >
+                                <div class="pen" >  
+                                   <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit"></button> 
+                                </div>
+                            </div>
+                                    </div>
+                                    <div class="row" >
+                                        <div class="col-12"> 
+                                            <div class="text-box"> {{profile()[0].role}} </div>
+                                        </div>
+                                        </div>
+                                
+                                
+                            
+                        </div>
+                    </div>
+           
+        </div>
+        
+
+        <div class="col-md-4"> 
+            <div class="pixel-me"> Pixel me </div>
+        </div> 
+
     </div>
 
     <div class="row g-3 mt-2 px-3">

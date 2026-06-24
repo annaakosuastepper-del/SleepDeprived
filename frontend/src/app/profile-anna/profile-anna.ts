@@ -4,12 +4,13 @@ import { Footer } from "../footer/footer";
 import { BackendService } from '../shared/backend';
 import { CommonModule } from '@angular/common';
 import { Profile } from '../shared/profile';
+import { RouterLink } from "@angular/router";
 
 
 
 @Component({
   selector: 'app-profile-anna',
-  imports: [Nav, Footer, CommonModule],
+  imports: [Nav, Footer, CommonModule, RouterLink],
   templateUrl: './profile-anna.html',
   styleUrl: './profile-anna.css',
 })
