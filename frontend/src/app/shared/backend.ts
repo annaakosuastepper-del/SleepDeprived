@@ -33,8 +33,8 @@ export class BackendService{
     return updated;
   }
   
-    async deleteOne(name: String; boxIndex: number): Promise<{message: string}> {
-    let response = await fetch(this.apiURL + '/profile/'+ name + '/boxes/' + boxIndex{
+    async deleteOne(name: String, boxIndex: number): Promise<{message: string}> {
+    let response = await fetch(this.apiURL + '/profile/'+ name + '/boxes/' + boxIndex,{
       method: "DELETE"
     });
     let message = await response.json();

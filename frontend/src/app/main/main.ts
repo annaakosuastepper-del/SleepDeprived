@@ -13,10 +13,10 @@ export class Main {
   private router = inject(Router);
 
     teamMembers = [
-    { name: 'Hari', image: 'personicon.jpg', route:'/profile/hari' },
-    { name: 'Nina', image: 'personicon.jpg', route:'/profile/nina' },
-    { name: 'Anna', image: 'personicon.jpg', route:'/profile/anna' },
-    { name: 'Brenda', image: 'personicon.jpg', route:'/profile/brenda' }
+    { name: 'Hari', image: 'assets/personicon.jpg', route:'/profile/hari' },
+    { name: 'Nina', image: 'assets/personicon.jpg', route:'/profile/nina' },
+    { name: 'Anna', image: 'assets/personicon.jpg', route:'/profile/anna' },
+    { name: 'Brenda', image: 'assets/personicon.jpg', route:'/profile/brenda' }
   ];
 
   goToProfile(route: string) {
