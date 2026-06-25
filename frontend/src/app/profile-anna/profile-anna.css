@@ -54,6 +54,8 @@
 .text-box{
     background-color: #a71d57;
     height: auto;
+    width: 75%;
+    margin-left: 5%;
     margin-top: 10px;
 }
 
@@ -108,4 +110,5 @@
 .pen{
     width: 50px;
     background-color: #a71da2;
+    object-fit: contain;
 }

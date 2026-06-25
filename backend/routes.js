@@ -10,7 +10,7 @@ router.get('/profiles/:name', async(req, res) => {
     res.json(profile)
 })
 
-
+//get 
 router.get('/profiles/name', async(req, res) => {
     console.log( 'Looking for:',req.params.name)
     const profile = await Profile.find()

@@ -7,47 +7,55 @@
      </div>
     
     <div class="row g-3 mt-2 px-3">
+
         <div class="col-md-4">
-            <div class="profile-pic">Picture</div></div> 
+            <div class="profile-pic">Picture</div>
+        </div> 
             
             <div class="col-md-8">
-                <div class="profile-bio">Bio
-                    <div class="col-12"> <div class="text-box"> {{profile()[0].bio}} </div></div>
+
+                <div class="profile-bio">
+                    <div class= "row">
+                        <div class="col-10 "><div class="title"> <h3>Bio </h3></div></div>
+                        
+                            <div class="col-2" >
+                                <div class="pen" >  
+                                   <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/bio/0"></button> 
+                                </div>
+
+                        </div>
+                        <div class="col-12"> <div class="text-box"> {{profile()[0].bio}} </div></div>
+                    </div>
                 </div>
-             </div>
+            </div>
     </div>
 
     <div class="row g-3 mt-2 px-3"> 
-        
-        
-       <div class="col-md-8" >
+     
+       
             
-                    <div class="col-md-8"  >
+        <div class="col-md-8"  >
                     
-                     <div class="profile-role" >
-                        <div class="row" >
-                            
-                            <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
+            <div class="profile-role" >
+                <div class="row" >
+                    <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
                         
-
-                            <div class="col-2" >
-                                <div class="pen" >  
-                                   <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit"></button> 
-                                </div>
-                            </div>
-                                    </div>
-                                    <div class="row" >
-                                        <div class="col-12"> 
-                                            <div class="text-box"> {{profile()[0].role}} </div>
-                                        </div>
-                                        </div>
-                                
-                                
-                            
+                    <div class="col-2" >
+                         <div class="pen" >  
+                            <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/role/0"></button> 
                         </div>
                     </div>
-           
-        </div>
+                </div>
+                    
+                        <div class="row" >
+                            <div class="col-12"> 
+                                <div class="text-box"> {{profile()[0].role}} </div>
+                            </div>
+                        </div>
+                      
+                        </div>
+                    </div>
+      
         
 
         <div class="col-md-4"> 
@@ -57,23 +65,46 @@
     </div>
 
     <div class="row g-3 mt-2 px-3">
-        <div class="col-12"> <div class="cv"><h1>Resume </h1> </div></div> 
+        <div class="col-12"> <div class="cv"><h1>Lebenslauf </h1> </div></div> 
             
                 @for (box of profile()[0].boxes; track box){
                 <div class="col-md-4">
-                 <div class="box"> {{box.title}} 
-                    <div class="row g-2 mt-1">
-                         <div class="col-12"> <div class="text-box"> {{ box.content }} </div></div>
+                    <div class="box" >
+                    <div class="row">
+                            <div class="col-10 "><div class="title"> <h3>{{box.title}}  </h3></div></div>
+                       
+                        
+                        <div class="col-2" >
+                                <div class="pen" >  
+                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/box/index"></button> 
+                                </div>
+                        </div>
                     </div>
+                
+                    
+                        <div class="row">
+                            <div class="row g-2 mt-1">
+                                <div class="col-12"> <div class="text-box"> {{ box.content }} </div></div>
+                            </div>
+                        </div>  
                     </div>
-                </div>
+                </div>   
                 }
-    </div>
             
             
             <div class="col-md-4" >
-                <div class="box6"> Box 6 
-                    
+                <div class="box6">  
+                    <div class="row">
+                            <div class="col-10 "><div class="title"> <h3>Files  </h3></div></div>
+                       
+                        
+                        <div class="col-2" >
+                                <div class="pen" >  
+                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/files/0"></button> 
+                                </div>
+                        </div>
+                    </div>
+                
                 <div class="row g-2 mt-1">
                     @for (file of profile()[0].files; track file){
                     <div class="col-4"><div class="file1"> {{file}}</div></div>
