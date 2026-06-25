@@ -1,7 +1,7 @@
 <app-nav></app-nav>
 
 <div class="container-fluid" style="background-color: palevioletred;">
-    
+    @if(profile().length > 0){ 
     <div class="row">
         <div class="col-12"> <div class="profile-name">  Name </div> </div>
      </div>
@@ -116,7 +116,7 @@
     </div>
 
       <div class="col-12"> <div class="cv">button </div></div> 
-
+}
 <app-footer></app-footer>
 
 

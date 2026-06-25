@@ -11,7 +11,7 @@ router.get('/profiles/:name', async(req, res) => {
 })
 
 //get 
-router.get('/profiles/name', async(req, res) => {
+router.get('/profiles/', async(req, res) => {
     console.log( 'Looking for:',req.params.name)
     const profile = await Profile.find()
     console.log('All profiles', profile)
@@ -20,7 +20,12 @@ router.get('/profiles/name', async(req, res) => {
 
 //PUT - update a profile
 router.put('/profiles/:name', async(req,res) => {
-    await Profile.findOneAndUpdate({name: req.params.name})
+    const{_id, ...updateData} = req.body;
+    const profile = await Profile.findOneAndUpdate(
+    {name: req.params.name},
+    {$set: updateData},
+    {returnDocument: 'after'} //from the console
+)
     res.json (profile)
 })
 

@@ -17,17 +17,19 @@ export class BackendService{
         return profiles;
     }
 
-  async getOne(name: string): Promise<Profile> {
+  async getOne(name: string): Promise<Profile[]> {
     let response = await fetch(this.apiURL + '/profiles/' + name);
     let profile = await response.json();
     return profile;
   }
 
-  async update(name: string, profile: Profile): Promise<Profile> {
+  async update(name: string, updateData: Profile): Promise<Profile> {
+    console.log('sending to backend:', name, updateData);
+    
     let response = await fetch(this.apiURL + '/profiles/' + name, {
-      method: 'PUT',
+      method: "PUT",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(profile)
+      body: JSON.stringify(updateData)
     });
     let updated = await response.json();
     return updated;

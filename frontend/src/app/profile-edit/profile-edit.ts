@@ -35,6 +35,7 @@ export class ProfileEdit implements OnInit{
 
 
   ngOnInit(){
+    
     this.name = this.route.snapshot.params['name'];
     this.field = this.route.snapshot.params['field'];
     this.index = this.route.snapshot.params['index'];
@@ -43,7 +44,7 @@ export class ProfileEdit implements OnInit{
     this.bs.getOne(this.name!)
 
     .then ( response => {
-      this.profile = response
+      this.profile = response[0]
 
       this.form.patchValue({
         bioControl: this.profile?.bio,
@@ -60,6 +61,10 @@ export class ProfileEdit implements OnInit{
     update(){
       const values = this.form.value;
 
+      console.log('field:', this.field);
+      console.log('values:', values);
+      console.log('profile before update:', this.profile);
+
       if(this.field === 'bio'){
         this.profile.bio =  values.bioControl!;
       }
@@ -69,6 +74,7 @@ export class ProfileEdit implements OnInit{
         this.profile.boxes[this.index].title = values.titleControl!;
         this.profile.boxes[this.index].content = values.contentControl!;
       }
+    console.log('profile after update:', this.profile);
 
       this.bs.update(this.name!, this.profile)
       .then( () => this.router.navigate(['profile/'+this.name] ))
