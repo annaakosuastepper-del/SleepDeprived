@@ -22,6 +22,6 @@ export class ProfileAnna implements OnInit {
   async ngOnInit() {
     const data = await this.backendService.getAll();
     this.profile.set(data);
-    console.log('Service:', this.profile());
+    console.log('Profile-anna:', this.profile());
   }
 }
