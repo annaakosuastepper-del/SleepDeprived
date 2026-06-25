@@ -6,13 +6,26 @@
         <div class="col-12"> <h1 class = "title">Editing page: {{name}} Section: {{field}} </h1>  </div>
      </div>
 
-     <div class="row g-3 mt-2 px-3"> 
-        <div class="row">
-        <div class="col-12"> <div class="button-row"> test </div ></div>
+     <form [formGroup]="form" (ngSubmit)="update()">
+        <div class="row g-3 mt-2 px-3"> 
+
+            @if (field == 'bio'){
+                <textarea type="text" formControlName="bioControl"></textarea>
+            }
+             @if (field == 'role'){
+                <textarea type="text" formControlName="roleControl"></textarea>
+            }
+             @if (field == 'boxes'){
+                <textarea type="text" formControlName="titleControl"></textarea>
+                <textarea type="text" formControlName="contentControl"></textarea>
+            }
+       
         </div>
-         <div class="row">
-        <div class="col-12"> <div class="type-text-box"> test </div ></div>
+         <div class="row gx-0 mt-5">
+          <button type="submit" class="col-5 btn " style ="background-color: rgb(184, 86, 209);" (click)="update()">Aktualisieren</button>
+          <div class="col-2"></div>
+          <button type="button" class="col-5 btn " style="background-color: rgb(144, 195, 243);"(click)="cancel()">Abbrechen</button>
         </div>
-     </div>    
+     </form>
  
 </div>

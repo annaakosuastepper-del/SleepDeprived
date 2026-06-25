@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Nav } from "../nav/nav";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from '../shared/backend';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +18,7 @@ export class ProfileEdit implements OnInit{
   
   private bs = inject(BackendService)
   private route = inject(ActivatedRoute)
+  private router = inject(Router)
 
   profile: any;
   name = '';
@@ -57,10 +58,25 @@ export class ProfileEdit implements OnInit{
     }
 
     update(){
+      const values = this.form.value;
+
+      if(this.field === 'bio'){
+        this.profile.bio =  values.bioControl!;
+      }
+      if(this.field === 'role')this.profile.role = values.roleControl!;
+      
+      if(this.field === 'boxes'){
+        this.profile.boxes[this.index].title = values.titleControl!;
+        this.profile.boxes[this.index].content = values.contentControl!;
+      }
+
+      this.bs.update(this.name!, this.profile)
+      .then( () => this.router.navigate(['profile/'+this.name] ))
+
 
     }
 
     cancel(){
-
+      this.router.navigate(['profile/'+this.name]);
     }
   }
