@@ -4,17 +4,15 @@
 }
 
 .name{
-    
-    background-color: aqua;
+    background-color: #F6C45C;
     text-align: center;
-     width: 100%;
+    width: 100%;
 }
 
 .gamelogo{
     border-radius: 10px;
     height: 250px;
-    
-    background-color: blueviolet;
+   
 }
 
 .whatis{
@@ -22,13 +20,13 @@
    
     border-radius: 10px;
     height: 250px;
-    background-color:chocolate;
+    background-color:#66a5ed;
     padding: 10px;
 }
 
 .timeline{
    margin-right: 20px;
-    background-color: coral;
+    background-color: #ffafeb;
     height: 500px;
    
     border-radius: 10px;
@@ -39,7 +37,7 @@
     height: 300px;
     border-radius: 10px;
     margin-left: 10px;
-    background-color: rgb(154, 34, 114);
+    background-color: #db3e8c;
 }
 
 .picMini{

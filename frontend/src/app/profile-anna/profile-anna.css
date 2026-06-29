@@ -1,17 +1,20 @@
 
 *{
     font-family:Arial,sans-serif;
+
 }
 .profile-name{
-    background-color: #49a71d;
+    background-color: #F6C45C;
     text-align: center;
     height: 100px;
     margin: 10px;
+    padding: 1.9%;
+    color: #db3e8c ;
 }
 
 
 .profile-pic{
-    background-color: #a71da2;
+    background-color: #66a5ed;
     text-align: center;
     height: 300px;
     width: 450px;
@@ -19,7 +22,9 @@
 }
 
 .profile-bio{
-    background-color: #a71d57;
+    background-color: #ffafeb;
+    color: #5c0d62;
+    border-radius: 10px;
     text-align: center;
     margin: 10px;
     height: 300px;
@@ -27,14 +32,15 @@
 
 
 .profile-role{
-    background-color: #1da779;
+    background-color: #db3e8c;
+        border-radius: 10px;
+    color: #66a5ed;
     text-align: center;
     height: 300px;
     margin: 10px;
 }
 
 .title{
-    background-color: #4a99e4;
     height: 50px;
     text-align: center;
     padding-top: 10px;
@@ -42,8 +48,6 @@
     
 }
 .pixel-me{
-
-    background-color: #1da779;
     text-align: center;
     height: 300px;
     width: 450px;
@@ -52,7 +56,6 @@
 }
 
 .text-box{
-    background-color: #a71d57;
     height: auto;
     width: 75%;
     margin-left: 5%;
@@ -62,6 +65,7 @@
 
 .cv{
     background-color: #5c0d62;
+    color: #F6C45C;
     text-align: center;
     grid-column: 1/-1;
     height: auto;
@@ -70,15 +74,19 @@
 
 
 .box{
-    background-color: #7cb3a1;
+    background-color: #66a5ed;
     text-align: center;
+    border-radius: 10px;
+    color: #db3e8c;
     height: 300px;
     margin: 10px;
 }
 
 
 .box6{
-    background-color: #7cb3a1;
+    background-color: #db3e8c;
+    color:#66a5ed;
+    border-radius: 10px;
     text-align: center;
     height: 200px;
     margin: 10px;
