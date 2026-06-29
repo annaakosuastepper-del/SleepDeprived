@@ -70,7 +70,11 @@ export class ProfileEdit implements OnInit{
       }
       if(this.field === 'role')this.profile.role = values.roleControl!;
       
-      if(this.field === 'boxes'){
+      if(this.field === 'boxes'&& this.index === 'new'){
+        this.bs.createBox(this.name!, {title: values.titleControl!, content: values.contentControl!})
+        .then( () => this.router.navigate(['profile/'+this.name] ))
+      }
+      if(this.field === 'boxes'&& this.index !== 'new'){
         this.profile.boxes[this.index].title = values.titleControl!;
         this.profile.boxes[this.index].content = values.contentControl!;
       }
@@ -85,4 +89,6 @@ export class ProfileEdit implements OnInit{
     cancel(){
       this.router.navigate(['profile/'+this.name]);
     }
+
+  
   }

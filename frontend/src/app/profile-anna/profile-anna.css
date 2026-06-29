@@ -119,3 +119,8 @@
     width: 50px;
     object-fit: contain;
 }
+
+.plus{
+    width: 200px;
+    margin-left: 170px;
+}
