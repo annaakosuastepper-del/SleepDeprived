@@ -45,10 +45,10 @@ router.delete('/profiles/:name/boxes/:boxIndex', async(req, res)=> {
 //POST add a box to the profile
 
 router.post('/profiles/:name/boxes', async(req, res) =>{
-    const newBox = await Profile.findOne({name: req.params.name})
-    newBox.boxes.push(req.body)
-    await newBox.save()
-    res.json(newBox)
+    const profile = await Profile.findOne({name: req.params.name})
+    profile.boxes.push(req.body)
+    await profile.save()
+    res.json(profile)
 })
 
 module.exports = router

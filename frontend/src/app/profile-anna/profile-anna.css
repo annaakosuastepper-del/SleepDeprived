@@ -4,6 +4,7 @@
 
 }
 .profile-name{
+
     background-color: #F6C45C;
     text-align: center;
     height: 100px;
@@ -122,5 +123,4 @@
 
 .plus{
     width: 200px;
-    margin-left: 170px;
 }
