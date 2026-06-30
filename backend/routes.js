@@ -32,11 +32,11 @@ router.put('/profiles/:name', async(req,res) => {
 //unshift() — adds to the beginning
 //pop() — removes the last item
 //shift() — removes the first item
-//splice() — removes/replaces at a specific index (what you used for delete)
+//splice() — removes/replaces at a specific index 
 
 //DELETE one box from a profile
 router.delete('/profiles/:name/boxes/:boxIndex', async(req, res)=> {
-    const profile = await Profile.findOne({name: req.params.name})
+    const profile = await Profile.deleteOne({name: req.params.name})
     profile.boxes.splice(req.params.boxIndex, 1)
     await profile.save()
     res.json(profile)

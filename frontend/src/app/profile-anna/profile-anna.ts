@@ -24,4 +24,10 @@ export class ProfileAnna implements OnInit {
     this.profile.set(data);
     console.log('Profile-anna:', this.profile());
   }
+
+  async deleteOne(index: number) {
+    await this.backendService.deleteOne('anna', index);
+    const data = await this.backendService.getAll();
+    this.profile.set(data);
+}
 }
