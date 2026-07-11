@@ -15,7 +15,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './profile-anna.css',
 })
 export class ProfileAnna implements OnInit {
-   profile= signal<Profile[]>([]);
+   profile= signal<Profile[]>([]); //signal to hold the profile data, defined with the type Profile[] to match the expected data structure,and initialized as an empty array to ensure it starts with a valid state.
 
   backendService = inject(BackendService);
 
@@ -29,5 +29,9 @@ export class ProfileAnna implements OnInit {
     await this.backendService.deleteOne('anna', index);
     const data = await this.backendService.getAll();
     this.profile.set(data);
+}
+searchTerm= '';
+search(event: any) {
+  this.searchTerm = event.target.value.toLowerCase();
 }
 }
