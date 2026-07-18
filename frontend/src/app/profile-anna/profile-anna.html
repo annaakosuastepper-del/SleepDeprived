@@ -1,7 +1,10 @@
 <app-nav></app-nav>
 
-<div class="container-fluid" style="background-color: rgb(125, 90, 173);">
+<div class="container-fluid" style="background-color: rgb(125, 90, 173);"(dragover)="onDragOver($event)" 
+     (drop)="onDrop($event)">
+    
     @if(profile().length > 0){ 
+        
     <div class="row">
         <div class="col-12"> <div class="profile-name"> <img src="assets/annaTitle.png" alt="Anna Akosua Odeibea Stepper"> </div> </div>
      </div>
@@ -110,20 +113,17 @@
  
                 <div class="box6">  
 
-                    <div class="row">
-
-                            <div class="col-10 "><div class="title"> <h3>Files  </h3></div></div>
-                       
-                        
-                        <div class="col-2" >
-                                <div class="pen" >  
-                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/files/0"></button> 
-                                </div>
-                        </div>
-                    </div>
-
+                        <div> <h3>Files</h3></div>
+                   <div class="col-2">
+                    
+                    <button class="bg-transparent border-0" (click)="triggerFileInput()">
+                        <img src="assets/plusSign.PNG" class="plus-files">
+                    </button>
+                    <input type="file" id="fileInput" style="display:none" (change)="onFileSelect($event)" />
+        </div>
                 <div class="row g-2 mt-1">
                     @for (file of profile()[0].files; track file){
+                       
                     <div class="col-4"><div class="file1"> {{file}}</div></div>
                   }
                 </div>

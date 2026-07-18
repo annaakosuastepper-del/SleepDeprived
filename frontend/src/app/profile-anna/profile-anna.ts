@@ -34,4 +34,26 @@ searchTerm= '';
 search(event: any) {
   this.searchTerm = event.target.value.toLowerCase();
 }
+
+
+triggerFileInput() {
+  document.getElementById('fileInput')?.click();
+}
+
+onFileSelect(event: any) {
+  const file = event.target.files[0];
+  console.log('Selected file:', file);
+}
+
+onDragOver(event: DragEvent) {
+  event.preventDefault();
+}
+
+onDrop(event: DragEvent) {
+  event.preventDefault();
+  const files = event.dataTransfer?.files;
+  if (files && files.length > 0) {
+    console.log('Dropped files:', files);
+  }
+}
 }
