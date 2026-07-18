@@ -6,7 +6,18 @@ require('dotenv').config();
 
 
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+        if (file.originalname === file.originalname) {
+            console.log('File already exists');
+        }
+    }
+});
+const upload = multer({ storage: storage });
 
 const app = express();
 const PORT = 3000;
@@ -14,8 +25,10 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors());
 app.use('/', routes);
+app.use('/uploads', express.static('uploads'));
 
-app.post('/api/upload', (req, res) => {
+
+app.post('/api/upload', upload.single('file'), (req, res) => {
     res.send('File uploaded successfully');
 });
 
