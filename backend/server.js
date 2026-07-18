@@ -4,12 +4,20 @@ const cors =require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 app.use(cors());
 app.use('/', routes);
+
+app.post('/api/upload', (req, res) => {
+    res.send('File uploaded successfully');
+});
 
 // connect to mongoDB
 mongoose.connect('mongodb://localhost:27017', { dbName: 'sleepDeprived' });
