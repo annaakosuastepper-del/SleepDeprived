@@ -124,7 +124,12 @@
                 <div class="row g-2 mt-1">
                     @for (file of profile()[0].files; track file){
                        
-                    <div class="col-4"><div class="file1"> {{file}}</div></div>
+                <div class="col-4">
+                    <div class="file1">
+                       <img src="assets/file.png" class="file-picture">  
+                        <p>{{file}}</p>
+                    </div>
+                </div>
                   }
                 </div>
 

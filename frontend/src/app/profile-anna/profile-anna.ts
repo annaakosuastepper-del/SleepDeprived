@@ -45,15 +45,28 @@ onFileSelect(event: any) {
   console.log('Selected file:', file);
 }
 
-onDragOver(event: DragEvent) {
-  event.preventDefault();
-}
-
 onDrop(event: DragEvent) {
   event.preventDefault();
-  const files = event.dataTransfer?.files;
-  if (files && files.length > 0) {
-    console.log('Dropped files:', files);
-  }
+  const file =event.dataTransfer?.files[0];
+
+  if (file) {
+    const fromData = new FormData();
+    fromData.append('file', file);
+
+    fetch('http://localhost:3000/api/upload', {
+      method: 'POST',
+      body: fromData,
+    })
+    .then(res => res.text())
+    .then(data =>console.log('File uploaded successfully:', data))
+}
+}
+
+onDragOver(event: DragEvent) {
+  event.preventDefault();
+  console.log('drop fired!');
+  const files = event.dataTransfer?.files[0];
+  console.log('Dropped file:', files);
+  
 }
 }
