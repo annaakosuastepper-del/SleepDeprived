@@ -45,7 +45,8 @@ export class BackendService{
   }
 
   async createBox(name: String, newBox:{title: String, content: String}): Promise<{message: string}> {
-    let response = await fetch(this.apiURL + '/profiles/'+ name ,{
+        console.log('createBox called!', name, newBox);
+    let response = await fetch(this.apiURL + '/profiles/'+ name + '/boxes' ,{
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newBox)

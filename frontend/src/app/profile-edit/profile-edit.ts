@@ -73,7 +73,9 @@ export class ProfileEdit implements OnInit{
       if(this.field === 'boxes'&& this.index === 'new'){
         this.bs.createBox(this.name!, {title: values.titleControl!, content: values.contentControl!})
         .then( () => this.router.navigate(['profile/'+this.name] ))
+        return
       }
+
       if(this.field === 'boxes'&& this.index !== 'new'){
         this.profile.boxes[this.index].title = values.titleControl!;
         this.profile.boxes[this.index].content = values.contentControl!;
