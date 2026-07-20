@@ -15,7 +15,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './profile-anna.css',
 })
 export class ProfileAnna implements OnInit {
-   profile= signal<Profile[]>([]); //signal to hold the profile data, defined with the type Profile[] to match the expected data structure,and initialized as an empty array to ensure it starts with a valid state.
+   profile= signal<Profile[]>([]); //waits for data to be fetched from backend and then updates the view  
 
   backendService = inject(BackendService);
 
@@ -48,6 +48,7 @@ onFileSelect(event: any) {
 onDrop(event: DragEvent) {
   event.preventDefault();
   const file =event.dataTransfer?.files[0];
+  console.log('Dropped file:', files);
 
   if (file) {
     const fromData = new FormData();
@@ -65,8 +66,7 @@ onDrop(event: DragEvent) {
 onDragOver(event: DragEvent) {
   event.preventDefault();
   console.log('drop fired!');
-  const files = event.dataTransfer?.files[0];
-  console.log('Dropped file:', files);
+  
   
 }
 }
