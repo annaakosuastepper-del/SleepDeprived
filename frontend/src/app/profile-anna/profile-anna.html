@@ -130,14 +130,13 @@
                                 </div>
                                 <div class="modal-body">
                                             <button class="btn btn-primary" multiple (click)="triggerFileInput()">Select File</button>
-                                            @if(selectedFile) {
-                    
-                                                <p>Selected file: {{ selectedFileName }}</p>
-                                            }
+                                             @for(file of selectedFiles; track file){
+                                                <p>{{file.name}}</p>
+                                                }                       
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-primary" (click)="onUploadFiles()">Upload Files</button>
                                 </div>
                                 </div>
                             </div>

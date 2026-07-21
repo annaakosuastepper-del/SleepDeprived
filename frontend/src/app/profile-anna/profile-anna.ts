@@ -40,14 +40,16 @@ selectedFileName = '';
 
 triggerFileInput() {
   document.getElementById('fileInput')?.click();
-  for(let i = 0; i < File.length; i++){
-        this.selectedFiles.push(File[i]);
-    }
-  this.selectedFileName = File.name;
+  
+
 }
 
 onFileSelect(event: any) {
-  const file = event.target.files[0];
+  const file = event.target.files;
+  for(let i = 0; i < file.length; i++){
+        this.selectedFiles.push(file[i]);
+        this.selectedFileName = file[i].name;
+    }
   console.log('Selected file:', file);
 }
 
@@ -72,9 +74,23 @@ onDrop(event: DragEvent) {
 onDragOver(event: DragEvent) {
   event.preventDefault();
   console.log('drop fired!');
-  
-  
 }
+
+
+
+onUploadFiles() {
+    const fromData = new FormData();
+    fromData.append('file', this.selectedFiles[0]);
+
+    fetch('http://localhost:3000/api/upload', {
+      method: 'POST',
+      body: fromData,
+    })
+    .then(res => res.text())
+    .then(data =>console.log('File uploaded successfully:', data))
+
+   
+  }
 
 
 
