@@ -95,7 +95,11 @@
 }
 
 
- 
+.textSize{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+} 
 
 .pen{
     width: 50px;

@@ -147,16 +147,14 @@
 
         <div class="row g-2 mt-1">
                  
-            <div class="col-4">  
                        @if(profile()[0].files.length > 0){
                         @for (file of profile()[0].files; track file){
-                         <div class="col-4">
+                         <div class="col-2">
                             <img src="assets/file.png" class="folder"> 
-                                <div> {{ file }} </div>
+                                <div class ="textSize"> {{ file }} </div>
                         </div>  
                         }
                     }
-            </div> 
 
             <div class="col-4">
 
