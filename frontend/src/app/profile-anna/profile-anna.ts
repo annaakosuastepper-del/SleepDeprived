@@ -95,7 +95,7 @@ onDragOver(event: DragEvent) {
         const updated = await this.backendService.getAll();
         this.profile.set(updated);
         this.selectedFiles = [];
-      }
+  }
   
 
   RemoveFile(fileName: string){
@@ -106,6 +106,23 @@ onDragOver(event: DragEvent) {
         }
       }
   }
+
+  async DeleteFile(fileName: string){
+    const fileIndex = this.profile()[0].files.indexOf(fileName);
+    if(fileIndex !== -1){
+        this.profile()[0].files.splice(fileIndex, 1);
+        await this.backendService.update('anna', this.profile()[0]);
+        const data = await this.backendService.getAll();
+        this.profile.set(data);
+    }
+for(let i = 0; i < this.selectedFiles.length; i++){
+        if(this.selectedFiles[i].name === fileName){
+            this.selectedFiles.splice(i, 1);
+            break;
+        }
+      }
+
+}
 
 
 
