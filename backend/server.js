@@ -28,7 +28,7 @@ app.use('/', routes);
 app.use('/uploads', express.static('uploads'));
 
 
-app.post('/api/upload', upload.single('file'), (req, res) => {
+app.post('/api/upload', upload.array('file'), (req, res) => {
     res.send('File uploaded successfully');
 });
 

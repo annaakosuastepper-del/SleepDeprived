@@ -95,26 +95,7 @@
 }
 
 
-.file1{
-    background-color: #1da779;
-    text-align: center;
-    height: 50px;
-    margin: 10px;
-}
-
-.file2{
-    background-color: #1da779;
-    text-align: center;
-    height: 50px;
-    margin: 10px;
-}
-
-.file3{
-    background-color: #265143;
-    text-align: center;
-    height: 50px;
-    margin: 10px;
-}
+ 
 
 .pen{
     width: 50px;
@@ -132,4 +113,8 @@
 
 .plus-files{
     width: 100px;
+}
+
+.folder{
+    width: 50px;
 }

@@ -40,8 +40,6 @@ selectedFileName = '';
 
 triggerFileInput() {
   document.getElementById('fileInput')?.click();
-  
-
 }
 
 onFileSelect(event: any) {
@@ -73,18 +71,32 @@ onDragOver(event: DragEvent) {
 
 
 
-onUploadFiles() {
+  async onUploadFiles() {
     const fromData = new FormData();
-    fromData.append('file', this.selectedFiles[0]);
+
+     for(let i = 0; i < this.selectedFiles.length; i++){
+        fromData.append('file', this.selectedFiles[i]);
+    }
 
     fetch('http://localhost:3000/api/upload', {
       method: 'POST',
       body: fromData,
     })
+
     .then(res => res.text())
     .then(data =>console.log('File uploaded successfully:', data))
 
-  }
+     for(let file of this.selectedFiles){
+            this.profile()[0].files.push(file.name);
+        }
+        await this.backendService.update('anna', this.profile()[0]);
+        
+        // refresh profile
+        const updated = await this.backendService.getAll();
+        this.profile.set(updated);
+        this.selectedFiles = [];
+      }
+  
 
   RemoveFile(fileName: string){
       for(let i = 0; i < this.selectedFiles.length; i++){

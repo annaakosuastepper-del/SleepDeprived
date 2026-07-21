@@ -79,8 +79,6 @@
                     <div class="box" >
                     <div class="row">
 
-                        
-                  
                         <div class="col-8"><div class="title"> <h3>{{box.title}}  </h3></div></div>
 
                         <div class="col-2" >
@@ -111,20 +109,28 @@
  
                 <div class="box6">  
 
-                        <div> <h3>Files</h3></div>
-                   <div class="col-2">
-                    
+                <div> <h3>Files</h3></div>
+                     
+                       @if(profile()[0].files.length > 0){
+                        @for (file of profile()[0].files; track file){
+                         <div class="col-4">
+                            <img src="assets/file.png" class="folder"> 
+                                <div> {{ file }} </div>
+                        </div>  
+                        }
+                    }
+            <div class="col-2">
                     <button type="button" class="bg-transparent border-0"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="assets/plusSign.PNG" class="plus-files">
                     </button>
-                     
+                
                             <div class="modal fade" id="exampleModal" tabindex="-1" (dragover)="onDragOver($event)" 
                                 (drop)="onDrop($event)">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Upload a File</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close" data-bs-dismiss="modal">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -147,15 +153,7 @@
     
        
                 <div class="row g-2 mt-1">
-                    @for (file of profile()[0].files; track file){
-                       
-                <div class="col-4">
-                    <div class="file1">
-                       <img src="assets/file.png" class="file-picture">  
-                        <p>{{file}}</p>
-                    </div>
-                </div>
-                  }
+               
                 </div>
 
                 </div>
