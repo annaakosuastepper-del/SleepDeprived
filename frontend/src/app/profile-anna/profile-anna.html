@@ -1,7 +1,6 @@
 <app-nav></app-nav>
 
-<div class="container-fluid" style="background-color: rgb(125, 90, 173);"(dragover)="onDragOver($event)" 
-     (drop)="onDrop($event)">
+<div class="container-fluid" style="background-color: rgb(125, 90, 173);">
     
     @if(profile().length > 0){ 
         
@@ -119,7 +118,8 @@
                         <img src="assets/plusSign.PNG" class="plus-files">
                     </button>
                      
-                            <div class="modal fade" id="exampleModal" tabindex="-1">
+                            <div class="modal fade" id="exampleModal" tabindex="-1" (dragover)="onDragOver($event)" 
+                                (drop)="onDrop($event)">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -129,7 +129,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                            <button class="btn btn-primary" (click)="triggerFileInput()">Select File</button>
+                                            <button class="btn btn-primary" (click)="triggerFileInput()">Select File or Drag and Drop</button>
                                              @for(file of selectedFiles; track file){
                                                 <p>{{file.name}}</p>
                                                 }                       
