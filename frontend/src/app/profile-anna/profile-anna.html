@@ -131,7 +131,7 @@
                                 <div class="modal-body">
                                             <button class="btn btn-primary" (click)="triggerFileInput()">Select File or Drag and Drop</button>
                                              @for(file of selectedFiles; track file){
-                                                <p>{{file.name}}</p>
+                                                <p>{{file.name}} <button type="button" class="close"(click)="RemoveFile(file.name)"> </button></p>
                                                 }                       
                                 </div>
                                 <div class="modal-footer">

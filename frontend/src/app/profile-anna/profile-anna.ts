@@ -84,9 +84,16 @@ onUploadFiles() {
     .then(res => res.text())
     .then(data =>console.log('File uploaded successfully:', data))
 
-   
   }
 
+  RemoveFile(fileName: string){
+      for(let i = 0; i < this.selectedFiles.length; i++){
+        if(this.selectedFiles[i].name === fileName){
+            this.selectedFiles.splice(i, 1);
+            break;
+        }
+      }
+  }
 
 
 
