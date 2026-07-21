@@ -35,9 +35,15 @@ search(event: any) {
   this.searchTerm = event.target.value.toLowerCase();
 }
 
+selectedFiles: any[] = [];
+selectedFileName = '';
 
 triggerFileInput() {
   document.getElementById('fileInput')?.click();
+  for(let i = 0; i < File.length; i++){
+        this.selectedFiles.push(File[i]);
+    }
+  this.selectedFileName = File.name;
 }
 
 onFileSelect(event: any) {
@@ -48,7 +54,7 @@ onFileSelect(event: any) {
 onDrop(event: DragEvent) {
   event.preventDefault();
   const file =event.dataTransfer?.files[0];
-  console.log('Dropped file:', files);
+  console.log('Dropped file:', file);
 
   if (file) {
     const fromData = new FormData();
@@ -69,4 +75,8 @@ onDragOver(event: DragEvent) {
   
   
 }
+
+
+
+
 }

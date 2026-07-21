@@ -115,11 +115,38 @@
                         <div> <h3>Files</h3></div>
                    <div class="col-2">
                     
-                    <button class="bg-transparent border-0" (click)="triggerFileInput()">
+                    <button type="button" class="bg-transparent border-0"  data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img src="assets/plusSign.PNG" class="plus-files">
                     </button>
+                     
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Upload a File</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                            <button class="btn btn-primary" multiple (click)="triggerFileInput()">Select File</button>
+                                            @if(selectedFile) {
+                    
+                                                <p>Selected file: {{ selectedFileName }}</p>
+                                            }
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                                
                     <input type="file" id="fileInput" style="display:none" (change)="onFileSelect($event)" />
-        </div>
+                </div>
+    
+       
                 <div class="row g-2 mt-1">
                     @for (file of profile()[0].files; track file){
                        
