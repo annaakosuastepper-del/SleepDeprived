@@ -128,18 +128,40 @@
                                         
                                         <div class="modal-body">
                                                     @for(file of profile()[0].files; track file){
-                                                        <p>{{file}} <button type="button" class="close"(click)="DeleteFile(file)"> </button></p>
+                                                        <p>{{file}}  
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confromation">  Delete Files
+                                                        </button>
+                                                        </p>
                                                     }                       
-                                        </div>
-                                        
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" (click)="onUploadFiles()" data-bs-dismiss="modal" >Upload Files</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                                
+                            
+                                            <div class="modal fade" id="confromation" tabindex="-1" role="dialog" >
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confromation">Are you sure you want to delete this File</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                      @for(file of profile()[0].files; track file){
+                                                       
+                                                   <p>{{file}} </p>
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                                     <button type="button" class="btn btn-primary"(click)="DeleteFile(file)" data-bs-dismiss="modal"> Yes </button>
+                                                      }
+                                                </div>
+                                               
+                                                </div>
+                                            
+                                            </div>
+                                            </div>
+                                       
+                                       
                     <input type="file" id="fileInput" style="display:none" multiple (change)="onFileSelect($event)" />
                 </div>
                 </div>
