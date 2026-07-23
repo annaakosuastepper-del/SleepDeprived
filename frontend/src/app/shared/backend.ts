@@ -24,7 +24,7 @@ export class BackendService{
   }
 
   async getFile(fileName: string): Promise<Blob> {
-    let response = await fetch(this.apiURL + '/upload/' + fileName);
+    let response = await fetch(this.apiURL + '/uploads/' + fileName);
     if (!response.ok) {
       throw new Error('Failed to fetch file: ' + response.statusText);
     }
