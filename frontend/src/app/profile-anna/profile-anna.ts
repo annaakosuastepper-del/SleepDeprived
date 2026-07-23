@@ -124,6 +124,14 @@ for(let i = 0; i < this.selectedFiles.length; i++){
 
 }
 
+async openFile(fileName: string) {
+  const blob = await this.backendService.getFile(fileName);
+  console.log('Blob:', blob);
+ const url = window.URL.createObjectURL(blob); 
+   window.open(url, '_blank');
 
+    
+
+}
 
 }

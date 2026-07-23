@@ -172,9 +172,9 @@
                        @if(profile()[0].files.length > 0){
                         @for (file of profile()[0].files; track file){
                          <div class="col-2">
-                            <img src="assets/file.png" class="folder"> 
-                                <div class ="textSize"> {{ file }} </div>
-                        </div>  
+                            <button class="bg-transparent border-0" (click)="openFile(file)"> <img src="assets/file.png" class="folder"> </button>
+                                <div class ="textSize" > {{file}} </div>
+                        </div>
                         }
                     }
 

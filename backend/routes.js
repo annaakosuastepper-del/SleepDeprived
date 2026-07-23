@@ -52,4 +52,13 @@ router.post('/profiles/:name/boxes', async(req, res) =>{
     res.json(profile)
 })
 
+router.post('/profiles/:name/files', async(req, res) =>{
+    const profile = await Profile.findOne({name: req.params.name})
+    profile.files.push(req.body)
+    await profile.save()
+    res.json(profile)
+})
+
+
+
 module.exports = router

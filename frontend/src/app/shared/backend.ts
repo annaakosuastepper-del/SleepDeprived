@@ -23,6 +23,15 @@ export class BackendService{
     return profile;
   }
 
+  async getFile(fileName: string): Promise<Blob> {
+    let response = await fetch(this.apiURL + '/upload/' + fileName);
+    if (!response.ok) {
+      throw new Error('Failed to fetch file: ' + response.statusText);
+    }
+    let fileBlob = await response.blob();
+    return fileBlob;
+  }
+
   async update(name: string, updateData: Profile): Promise<Profile> {
     console.log('sending to backend:', name, updateData);
     
