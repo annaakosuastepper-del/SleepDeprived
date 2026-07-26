@@ -50,6 +50,32 @@ app.post('/api/profilePic', uploadPic.single('file'), (req, res) => {
     res.send('Profile picture uploaded successfully');
 });
 
+app.delete('/api/profilePic/:fileName', (req, res) => {
+    const fs = require('fs');
+    const filePath = `profilePic/${req.params.fileName}`;
+    fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error deleting file');
+        } else {
+            res.send('File deleted successfully');
+        }
+})
+})
+
+app.delete('/api/upload/fileName', (req, res) => {
+    const fs = require('fs');
+    const filePath = `uploads/${req.params.fileName}`;
+     fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error deleting file');
+        } else {
+            res.send('File deleted successfully');
+        }
+})
+})
+
 // connect to mongoDB
 mongoose.connect('mongodb://localhost:27017', { dbName: 'sleepDeprived' });
 const db = mongoose.connection;

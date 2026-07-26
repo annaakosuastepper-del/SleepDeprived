@@ -165,40 +165,13 @@ async uploadPic() {
     
  this.profile()[0].profilePicture = this.selectedFileName;
   await this.backendService.update('anna', this.profile()[0]);
+
     const updated = await this.backendService.getAll();
     this.profile.set(updated);
     this.picturelink = "http://localhost:3000/profilePic/" + this.selectedFileName;
 }
 
-async DeleteProfilePic(fileName: string){
-    const fromData = new FormData();
-
-     for(let i = 0; i < this.selectedFiles.length; i++){
-        fromData.append('file', this.selectedFiles[i]);
-    }
-
-    fetch('http://localhost:3000/api/profilePic', {
-      method: 'DELETE',
-      body: fromData,
-    })
-
-    
-
-    const fileIndex = this.profile()[0].files.indexOf(fileName);
-    if(fileIndex !== -1){
-        this.profile()[0].files.splice(fileIndex, 1);
-        await this.backendService.update('anna', this.profile()[0]);
-        const data = await this.backendService.getAll();
-        this.profile.set(data);
-    }
-    
-    for(let i = 0; i < this.selectedFiles.length; i++){
-        if(this.selectedFiles[i].name === fileName){
-            this.selectedFiles.splice(i, 1);
-            break;
-        }
-      }
-      
+async updatePic(fileName: string){
 
 }
 
