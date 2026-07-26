@@ -8,6 +8,7 @@ import { RouterLink } from "@angular/router";
 
 
 
+
 @Component({
   selector: 'app-profile-anna',
   imports: [Nav, Footer, CommonModule, RouterLink],
@@ -108,15 +109,10 @@ onDragOver(event: DragEvent) {
   }
 
   async DeleteFile(fileName: string){
-    const fromData = new FormData();
 
-     for(let i = 0; i < this.selectedFiles.length; i++){
-        fromData.append('file', this.selectedFiles[i]);
-    }
-
-    fetch('http://localhost:3000/api/uploads', {
+    await fetch(`http://localhost:3000/api/uploads/${fileName}`, {
       method: 'DELETE',
-      body: fromData,
+     
     })
 
     const fileIndex = this.profile()[0].files.indexOf(fileName);
@@ -154,6 +150,7 @@ async uploadPic() {
         fromData.append('file', this.selectedFiles[i]);
     }
 
+    
     await fetch('http://localhost:3000/api/profilePic', {
       method: 'POST',
       body: fromData,
@@ -161,7 +158,7 @@ async uploadPic() {
     .then(res => res.text())
     .then(data =>console.log('Picture uploaded successfully:', data))
 
-
+    
     
  this.profile()[0].profilePicture = this.selectedFileName;
   await this.backendService.update('anna', this.profile()[0]);
@@ -169,10 +166,23 @@ async uploadPic() {
     const updated = await this.backendService.getAll();
     this.profile.set(updated);
     this.picturelink = "http://localhost:3000/profilePic/" + this.selectedFileName;
+
+    this.selectedFiles = [];
+    this.selectedFileName = '';
+
+    
 }
 
-async updatePic(fileName: string){
+async updatePic(){
+ const oldFileName = this.profile()[0].profilePicture;
 
+   await fetch(`http://localhost:3000/api/profilePic/${oldFileName}`, {
+      method: 'DELETE',
+    })
+
+
+    await this.uploadPic();
+  
 }
 
 }

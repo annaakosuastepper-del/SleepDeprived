@@ -37,9 +37,12 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(cors());
-app.use('/', routes);
+
 app.use('/uploads', express.static('uploads'));
 app.use('/profilePic', express.static('profilePic'));
+
+
+
 
 
 app.post('/api/upload', upload.array('file'), (req, res) => {
@@ -63,7 +66,7 @@ app.delete('/api/profilePic/:fileName', (req, res) => {
 })
 })
 
-app.delete('/api/upload/fileName', (req, res) => {
+app.delete('/api/upload/:fileName', (req, res) => {
     const fs = require('fs');
     const filePath = `uploads/${req.params.fileName}`;
      fs.unlink(filePath, (err) => {
@@ -75,6 +78,8 @@ app.delete('/api/upload/fileName', (req, res) => {
         }
 })
 })
+
+app.use('/', routes);
 
 // connect to mongoDB
 mongoose.connect('mongodb://localhost:27017', { dbName: 'sleepDeprived' });
