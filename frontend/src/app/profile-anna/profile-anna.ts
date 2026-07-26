@@ -130,8 +130,13 @@ async openFile(fileName: string) {
  const url = window.URL.createObjectURL(blob); 
    window.open(url, '_blank');
 
-    
+}
 
+async uploadPicture() {
+ this.profile()[0].profilePicture = this.selectedFileName;
+  await this.backendService.update('anna', this.profile()[0]);
+
+  
 }
 
 }
