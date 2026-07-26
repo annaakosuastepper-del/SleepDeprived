@@ -132,11 +132,14 @@ async openFile(fileName: string) {
 
 }
 
+picturelink ="";
+
 async uploadPicture() {
+  await this.onUploadFiles();
  this.profile()[0].profilePicture = this.selectedFileName;
   await this.backendService.update('anna', this.profile()[0]);
 
-  
+  this.picturelink = "http://localhost:3000/uploads/" + this.selectedFileName;
 }
 
 }
