@@ -11,8 +11,8 @@
     <div class="row g-3 mt-2 px-3">
 
         <div class="col-md-4 ">
-          @if(profile()[0].profilePicture != null){
-                    <div class=" d-flex justify-content-center"> <img [src]="picturelink" > </div>
+          @if(profile()[0].profilePicture){
+                    <div class=" d-flex justify-content-center"> <img [src]="picturelink" class="img-fluid"> </div>
                 }
             @else{
             <div class="profile-pic d-flex justify-content-center"> <button class="bg-transparent border-0"  > <img src="assets/plusSign.PNG" class="plus" data-bs-toggle="modal" data-bs-target="#profilePicModal"> </button>
