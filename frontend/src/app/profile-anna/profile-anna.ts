@@ -165,7 +165,6 @@ async uploadPic() {
 
     const updated = await this.backendService.getAll();
     this.profile.set(updated);
-    this.picturelink = "http://localhost:3000/profilePic/" + this.selectedFileName;
 
     this.selectedFiles = [];
     this.selectedFileName = '';

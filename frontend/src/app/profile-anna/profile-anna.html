@@ -15,7 +15,7 @@
                 <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button> 
             </div>
           @if(profile()[0].profilePicture){
-                    <div class="d-flex justify-content-center"> <img [src]="picturelink" class="img-fluid"> </div>
+                    <div class="d-flex justify-content-center"> <img [src]="'http://localhost:3000/profilePic/' + profile()[0].profilePicture" class="img-fluid"> </div>
                 }
           
                 
@@ -46,7 +46,7 @@
     
             </div> 
             
-            <div class="col-md-8">
+            <div class="col-md-8 ">
 
                 <div class="profile-bio">
                     <div class= "row">

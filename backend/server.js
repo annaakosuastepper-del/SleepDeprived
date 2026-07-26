@@ -66,7 +66,7 @@ app.delete('/api/profilePic/:fileName', (req, res) => {
 })
 })
 
-app.delete('/api/upload/:fileName', (req, res) => {
+app.delete('/api/uploads/:fileName', (req, res) => {
     const fs = require('fs');
     const filePath = `uploads/${req.params.fileName}`;
      fs.unlink(filePath, (err) => {
