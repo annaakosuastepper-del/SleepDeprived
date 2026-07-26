@@ -16,8 +16,21 @@ const storage = multer.diskStorage({
             console.log('File already exists');
         }
     }
-});
+    });
+const picStorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'profilePic/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+        if (file.originalname === file.originalname) {
+            console.log('File already exists');
+        }
+    }
+   });
+
 const upload = multer({ storage: storage });
+const uploadPic = multer({ storage: picStorage });
 
 const app = express();
 const PORT = 3000;
@@ -26,10 +39,15 @@ app.use(express.json());
 app.use(cors());
 app.use('/', routes);
 app.use('/uploads', express.static('uploads'));
+app.use('/profilePic', express.static('profilePic'));
 
 
 app.post('/api/upload', upload.array('file'), (req, res) => {
     res.send('File uploaded successfully');
+});
+
+app.post('/api/profilePic', uploadPic.single('file'), (req, res) => {
+    res.send('Profile picture uploaded successfully');
 });
 
 // connect to mongoDB
