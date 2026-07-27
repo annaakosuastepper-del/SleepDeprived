@@ -42,7 +42,7 @@ app.use(cors());
 
 app.use('/uploads', express.static('uploads'));
 app.use('/profilePic', express.static('profilePic'));
-
+app.use('/user', userRoutes);
 
 
 
@@ -101,4 +101,3 @@ app.listen(PORT, (error) => {
     }
 });
 
-app.use('/user', userRoutes);

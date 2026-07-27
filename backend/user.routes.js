@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const User = require('./user.model')
  const jwt = require('jsonwebtoken')
+const router = require('express').Router();
 
 router.post('/user', async(req, res) => {
    let username = req.body.username;
@@ -34,3 +35,5 @@ router.post('/login', async(req,res) => {
         res.status(401).json({message: 'username/password wrong'})        
     }
 })
+
+module.exports =router 
