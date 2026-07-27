@@ -2,6 +2,8 @@ const express = require('express');
 const routes = require('./routes');
 const cors =require('cors');
 const mongoose = require('mongoose');
+const userRoutes = require('./user.routes');
+
 require('dotenv').config();
 
 
@@ -98,3 +100,5 @@ app.listen(PORT, (error) => {
         console.log(`Server started and listening on port ${PORT} ... `);
     }
 });
+
+app.use('/user', userRoutes);
