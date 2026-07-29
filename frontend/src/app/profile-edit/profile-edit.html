@@ -10,14 +10,14 @@
         <div class="row g-3 mt-2 px-3"> 
 
             @if (field == 'bio'){
-                <textarea type="text" formControlName="bioControl"></textarea>
+                <quill-editor type="text" formControlName="bioControl"></quill-editor>
             }
              @if (field == 'role'){
-                <textarea type="text" formControlName="roleControl"></textarea>
+                <quill-editor type="text" formControlName="roleControl"></quill-editor>
             }
             @if (field == 'boxes'){
-                <textarea type="text" formControlName="titleControl"></textarea>
-                <textarea type="text" formControlName="contentControl"></textarea>
+                <quill-editor type="text" formControlName="titleControl"></quill-editor>
+                <quill-editor type="text" formControlName="contentControl"></quill-editor>
             }
        
         </div>

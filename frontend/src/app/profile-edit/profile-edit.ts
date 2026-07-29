@@ -3,6 +3,7 @@ import { Nav } from "../nav/nav";
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from '../shared/backend';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { QuillModule } from 'ngx-quill';
 
 
 
@@ -10,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-profile-edit',
   standalone: true,
-  imports: [Nav, ReactiveFormsModule],
+  imports: [Nav, ReactiveFormsModule, QuillModule],
   templateUrl: './profile-edit.html',
   styleUrl: './profile-edit.css',
 })

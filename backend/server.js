@@ -45,8 +45,6 @@ app.use('/profilePic', express.static('profilePic'));
 app.use('/user', userRoutes);
 
 
-
-
 app.post('/api/upload', upload.array('file'), (req, res) => {
     res.send('File uploaded successfully');
 });

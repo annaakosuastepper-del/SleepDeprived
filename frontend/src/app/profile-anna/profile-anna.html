@@ -11,7 +11,7 @@
     <div class="row g-3 mt-2 px-3">
 
         <div class="col-md-4 ">
-            @if(isLoggedIn){
+            @if(isAdmin){
              <div class="pen" >  
                 <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button> 
             </div>
@@ -55,13 +55,13 @@
                         <div class="col-10 "><div class="title"> <h3>Bio </h3></div></div>
                         
                             <div class="col-2" >
-                                @if(isLoggedIn){
+                                @if(isAdmin){
                                 <div class="pen" >  
                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/bio/0"></button> 
                                 </div>
                             }
                         </div>
-                        <div class="col-12"> <div class="text-box"> {{profile()[0].bio}} </div></div>
+                        <div class="col-12"> <div class="text-box"> <span [innerHTML]="profile()[0].bio"></span>  </div></div>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                     <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
                         
                     <div class="col-2" >
-                        @if(isLoggedIn){
+                        @if(isAdmin){
                          <div class="pen" >  
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/role/0"></button> 
                         </div>
@@ -89,7 +89,7 @@
                     
                         <div class="row" >
                             <div class="col-12"> 
-                                <div class="text-box"> {{profile()[0].role}} </div>
+                                <div class="text-box"><span [innerHTML]="profile()[0].role"></span> </div>
                             </div>
                         </div>
                       
@@ -119,14 +119,14 @@
                         <div class="row">
 
                         <div class="col-8"><div class="title"> <h3>{{box.title}}  </h3></div></div>
- @if(isLoggedIn){
+ @if(isAdmin){
                         <div class="col-2" >
                                 <div class="pen" >  
                                     <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" [routerLink]="['/profile/edit','anna','boxes',i]"></button> 
                                 </div>
                         </div>
   }                   
-  @if(isLoggedIn){
+  @if(isAdmin){
                         <div class="col-2" >
                                 <div class="trash" >  
                                     <button class="bg-transparent border-0"><img src="assets/trash.png" class="trash" (click)="deleteOne(i)"></button> 
@@ -137,27 +137,27 @@
                     </div> 
                         <div class="row">
                             <div class="row g-2 mt-1">
-                                <div class="col-12"> <div class="text-box"> {{ box.content }} </div></div>
+                                <div class="col-12"> <div class="text-box"> <span [innerHTML]="box.content"></span></div></div>
                             </div>
                         </div>  
                     </div>
                 </div>   
                 }}
-           
+           @if(isAdmin){
             <div class="col-md-4  d-flex justify-content-center " > <button class="bg-transparent border-0 " routerLink="/profile/edit/anna/boxes/new"> <img src="assets/plusSign.PNG" class="plus"> </button>
             </div>
-
+        }
             <div class="col-md-4" >
  
                 <div class="box6">  
                 <div class="row">
                 <div class="col-10"> <h3>Files</h3></div>
                     <div class="col-2" >
-                         @if(isLoggedIn){
+                         @if(isAdmin){
                                 <div class="trash" >  
                                     <button class="bg-transparent border-0"><img src="assets/trash.png" class="trash" data-bs-toggle="modal" data-bs-target="#deleteModal"></button> 
                                 </div>
-}
+
                             <div class="modal fade" id="deleteModal" tabindex="-1">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -202,7 +202,7 @@
                                             
                                             </div>
                                             </div>
-                                       
+                                  }     
                                        
                     <input type="file" id="fileInput" style="display:none" multiple (change)="onFileSelect($event)" />
                 </div>
@@ -221,7 +221,7 @@
                     }
 
             <div class="col-4">
-@if(isLoggedIn){
+@if(isAdmin){
                     <button type="button" class="bg-transparent border-0"  data-bs-toggle="modal" data-bs-target="#uploadModal">
                         <img src="assets/plusSign.PNG" class="plus-files">
                     </button>

@@ -184,6 +184,6 @@ async updatePic(){
   
 }
 
-isLoggedIn = !!localStorage.getItem('token');
+ isAdmin = localStorage.getItem('role') === 'admin';
 
 }

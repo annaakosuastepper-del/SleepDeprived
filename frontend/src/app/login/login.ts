@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class Login {
   username = '';
   password = '';
+  role = '';
 
   private router = inject(Router);
 
@@ -36,9 +37,13 @@ export class Login {
     if(response.ok){
       console.log('success')
       const data = await response.json();
+      console.log('login response:', data);
       const token = data.token;
       localStorage.setItem('token', token);
+            localStorage.setItem('role', data.user.role);
+
       this.router.navigate(['/main']);
+
     }
     else{
       console.log('wrong credentials')
@@ -47,6 +52,7 @@ export class Login {
 
       
     }
+
 }
 
 
