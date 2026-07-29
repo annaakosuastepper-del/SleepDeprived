@@ -7,6 +7,7 @@ import { ProfileAnna } from './profile-anna/profile-anna';
 import { ProfileBrenda } from './profile-brenda/profile-brenda';
 import { ProjectBoardgame } from './project-boardgame/project-boardgame';
 import { ProfileEdit } from './profile-edit/profile-edit';
+import { authGuard } from './shared/auth-guard';
 
 export const routes: Routes = [
 {path: '', component: Login, pathMatch: 'full'},
@@ -16,8 +17,8 @@ export const routes: Routes = [
 {path: 'profile/anna', component: ProfileAnna},
 {path: 'profile/nina', component: ProfileNina},
 {path: 'project-boardgame', component: ProjectBoardgame},
-{path: 'profile/edit/:name/:field/:index', component: ProfileEdit}
-
+{path: 'profile/edit/:name/:field/:index', component: ProfileEdit},
+{path: 'profile/edit/:name/:field/:index', component: ProfileEdit, canActivate: [authGuard]}
 
 
 ]

@@ -184,4 +184,6 @@ async updatePic(){
   
 }
 
+isLoggedIn = !!localStorage.getItem('token');
+
 }
