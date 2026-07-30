@@ -1,13 +1,29 @@
 <app-nav></app-nav>
 
-<div class="container-fluid" style="background-color: rgb(125, 90, 173);">
+<div class="container-fluid" style="background-color: rgb(48, 21, 84);">
     
     @if(profile().length > 0){ 
         
     <div class="row">
-        <div class="col-12"> <div class="profile-name"> <img src="assets/annaTitle.png" alt="Anna Akosua Odeibea Stepper" > </div> </div>
+        <div class="col-12">
+             <div class="profile-name">
+              <button class="bg-transparent border-0" (click)="showHeaderOptions = !showHeaderOptions" ><img src="assets/Paint.png" class="pen" ></button> 
+                
+                <img img [src]="'assets/' + selectedHeader" alt="Anna Akosua Odeibea Stepper" > 
+
+            </div> 
+        </div>
      </div>
-    
+    @if(showHeaderOptions){
+     <div class="row">
+        <button (click)="selectedHeader = 'annaTitle1.png'"><img src="assets/annaTitle1.png"></button>
+        <button (click)="selectedHeader = 'annaTitle2.png'"><img src="assets/annaTitle2.png"></button>
+        <button (click)="selectedHeader = 'annaTitle3.png'"><img src="assets/annaTitle3.png"></button>
+        <button (click)="selectedHeader = 'annaTitle4.png'"><img src="assets/annaTitle4.png"></button>
+        <button (click)="selectedHeader = 'annaTitle5.png'"><img src="assets/annaTitle5.png"></button>
+        <button (click)="selectedHeader = 'annaTitle6.png'"><img src="assets/annaTitle6.png"></button>  
+     </div>
+    }
     <div class="row g-3 mt-2 px-3">
 
         <div class="col-md-4 ">

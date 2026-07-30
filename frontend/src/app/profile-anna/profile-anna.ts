@@ -186,4 +186,7 @@ async updatePic(){
 
  isAdmin = localStorage.getItem('role') === 'admin';
 
+ selectedHeader = 'annaTitle.png';
+ showHeaderOptions = false;
+
 }
