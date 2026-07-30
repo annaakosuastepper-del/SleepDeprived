@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -16,6 +17,13 @@ export class Nav {
     this.router.navigate(['/profile', name]);
   }
 
+
+isScrolled = false;
+
+@HostListener('window:scroll')
+onScroll() {
+  this.isScrolled = window.scrollY > 0;
+}
 
   
 }

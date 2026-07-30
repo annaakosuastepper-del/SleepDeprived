@@ -1,40 +1,41 @@
 
-  
-<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-transparent">
-  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-transprent py-3 px-4">
+      <nav [style.background-color]="isScrolled ? 'transparent' : 'rgb(48, 21, 84)'" 
+        class="navbar navbar-expand-lg sticky-top navbar-light">
+      <div class="container-fluid">
 
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/main">Home </a>
-      </li>
-      <li class="nav-item dropdown">
-         <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#navbarNavDropdown">
-          Projects
-        </button>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/project-boardgame">Boardgame Madness</a> 
-        </div>
-        
-      </li>
-      
-      <li class="nav-item dropdown">
-        <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#navbarNavDropdown">
-          Profiles
-        </button>
+      <a class="navbar-brand" href="#" style="color: #F6C45C;">Log-out</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/main"  style="color: #F6C45C;">Home </a>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#navbarNavDropdown"  style="color: #F6C45C;">
+              Projects
+            </button>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" routerLink="/project-boardgame"  style="color: #F6C45C;">Boardgame Madness</a> 
+            </div>
+            
+          </li>
+          
+          <li class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-target="#navbarNavDropdown"  style="color: #F6C45C;">
+              Profiles
+            </button>
 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" (click)="navigateToProfile('anna')">Anna</a>
-          <a class="dropdown-item" (click)="navigateToProfile('hari')">Haripriya</a>
-          <a class="dropdown-item" (click)="navigateToProfile('brenda')">Brenda</a>
-          <a class="dropdown-item" (click)="navigateToProfile('nina')">Nina</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"  style="background-color: rgb(48, 21, 84);">
+              <a class="dropdown-item" (click)="navigateToProfile('anna')"  style="color: #F6C45C;">Anna</a>
+              <a class="dropdown-item" (click)="navigateToProfile('hari')"  style="color: #F6C45C;">Haripriya</a>
+              <a class="dropdown-item" (click)="navigateToProfile('brenda')" style="color: #F6C45C;">Brenda</a>
+              <a class="dropdown-item" (click)="navigateToProfile('nina')" style="color: #F6C45C;">Nina</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
