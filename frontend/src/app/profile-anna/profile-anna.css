@@ -22,7 +22,7 @@
 }
 
 .profile-bio1{
-    background-color: #ffafeb;
+    background-color: #db3e8c;
     color: #5c0d62;
     border-radius: 10px;
     text-align: center;
@@ -31,14 +31,14 @@
 }
 
 .bio-pink { 
-    background-color: #FFAFEB; 
+    background-color: #db3e8c; 
     color: #66a5ed;
     border-radius: 10px;
     text-align: center;
     margin: 10px;
     height: 400px; 
 }
-.bio-blue { 
+.bio-yellow { 
     background-color: #F6C45C; 
     color: #775ba3; 
     border-radius: 10px;
@@ -56,7 +56,15 @@
     height: 400px;
     
 }
-
+.bio-blue { 
+    background-color: #66a5ed; 
+    color: #db3e8c; 
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    height: 400px;
+    
+}
 
 
 .profile-role{
@@ -92,11 +100,7 @@
 
 
 .cv{
-    background-color: #5c0d62;
-    color: #F6C45C;
-    text-align: center;
-    grid-column: 1/-1;
-    height: auto;
+    width: 450px;
     margin: 20px;
 }
 
@@ -169,4 +173,5 @@
     width: 400px;
     height:  400px;
 }
+
 

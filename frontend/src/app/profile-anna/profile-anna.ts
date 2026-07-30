@@ -27,6 +27,10 @@ export class ProfileAnna implements OnInit {
     this.selectedHeader = this.profile()[0].headerImage || 'annaTitle1.png';
     this.selectedFrame = this.profile()[0].pictureFrame || '';
     this.selectedBioColor = this.profile()[0].bioColor || '';
+    this.selectedRoleColor = this.profile()[0].roleColor || '';
+    this.selectedCv = this.profile()[0].cvHeader || '';
+    this.selectedBox = this.profile()[0].boxColor || '';
+
   }
 
   async deleteOne(index: number) {
@@ -217,4 +221,33 @@ async updatePic(){
     this.profile()[0].bioColor = bioColor;
     await this.backendService.update('anna', this.profile()[0]);
   }
+
+  showRoleColorOptions = false;
+  selectedRoleColor ='';
+
+  async selectRoleColor(roleColor: string){
+    this.selectedRoleColor = roleColor;
+    this.profile()[0].roleColor = roleColor;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
+
+  showCvOptions = false;
+  selectedCv = '';
+
+  async selectCv(CV: string){
+    this.selectedCv= CV;
+    this.profile()[0].cvHeader = CV;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
+
+  showBoxOptions = false;
+  selectedBox = ' ';
+
+  async selectBox(Box: string){
+    this.selectedBox= Box;
+    this.profile()[0].boxColor = Box;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
+
+
 }
