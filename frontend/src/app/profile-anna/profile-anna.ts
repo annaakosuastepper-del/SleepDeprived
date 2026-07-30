@@ -24,6 +24,7 @@ export class ProfileAnna implements OnInit {
     const data = await this.backendService.getAll();
     this.profile.set(data);
     console.log('Profile-anna:', this.profile());
+    this.selectedHeader = this.profile()[0].headerImage || 'annaTitle1.png';
   }
 
   async deleteOne(index: number) {
@@ -186,7 +187,15 @@ async updatePic(){
 
  isAdmin = localStorage.getItem('role') === 'admin';
 
- selectedHeader = 'annaTitle.png';
+ selectedHeader = 'annaTitle1.png';
  showHeaderOptions = false;
+
+
+ async selectHeader(imageName: string){
+    console.log('selectHeader called with:', imageName);
+    this.selectedHeader = imageName;
+    this.profile()[0].headerImage = imageName;
+    await this.backendService.update('anna', this.profile()[0]);
+ }
 
 }
