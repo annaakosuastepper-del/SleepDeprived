@@ -30,6 +30,7 @@ export class ProfileAnna implements OnInit {
     this.selectedRoleColor = this.profile()[0].roleColor || '';
     this.selectedCv = this.profile()[0].cvHeader || '';
     this.selectedBox = this.profile()[0].boxColor || '';
+    this.selectedFileColor = this.profile()[0].fileBoxColor || '';
 
   }
 
@@ -249,5 +250,13 @@ async updatePic(){
     await this.backendService.update('anna', this.profile()[0]);
   }
 
+  showFileOptions = false;
+  selectedFileColor = '';
+
+  async selectFileColor(file: string){
+    this.selectedFileColor= file;
+    this.profile()[0].fileBoxColor = file;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
 
 }

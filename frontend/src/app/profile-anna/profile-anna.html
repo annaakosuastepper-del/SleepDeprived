@@ -185,9 +185,9 @@
 
                     <div class="row">
 
-                        <div class="col-6"><div class="title"> <h3>{{box.title}}  </h3></div></div>
+                        <div class="col-8 p-3"><div class="title"> <h3>{{box.title}}  </h3></div></div>
                     @if(isAdmin){
-                        <div class="col-2" >
+                        <div class="col-1" >
                                 <div class="pen" >  
                                     <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" [routerLink]="['/profile/edit','anna','boxes',i]"></button> 
                                 </div>
@@ -195,7 +195,7 @@
                      }                   
                     
                     @if(isAdmin){
-                        <div class="col-2" >
+                        <div class="col-1" >
                                 <div class="trash" >  
                                     <button class="bg-transparent border-0"><img src="assets/trash.png" class="trash" (click)="deleteOne(i)"></button> 
                                 </div>
@@ -230,9 +230,9 @@
          
             <div class="col-md-4" >
  
-                <div class="box6">  
+                <div [class]="selectedFileColor">  
                 <div class="row">
-                <div class="col-10"> <h3>Files</h3></div>
+                <div class="col-8 p-3"> <h3>Files</h3></div>
                     <div class="col-2" >
                          @if(isAdmin){
                                 <div class="trash" >  
@@ -287,6 +287,11 @@
                                        
                     <input type="file" id="fileInput" style="display:none" multiple (change)="onFileSelect($event)" />
                 </div>
+                 @if(isAdmin){
+                    <div class="col-2" >
+                    <button class="bg-transparent border-0" (click)="showFileOptions = !showFileOptions" ><img src="assets/Paint.png" class="pen" ></button> 
+                    </div>
+                }         
                 </div>
                 
 
@@ -294,7 +299,7 @@
                  
                        @if(profile()[0].files.length > 0){
                         @for (file of profile()[0].files; track file){
-                         <div class="col-2">
+                         <div class="col-2 p-3">
                             <button class="bg-transparent border-0" (click)="openFile(file)"> <img src="assets/file.png" class="folder"> </button>
                                 <div class ="textSize" > {{file}} </div>
                         </div>
@@ -338,7 +343,14 @@
         </div>
     </div>
      </div>
-
+      @if(showFileOptions){
+                    <div class="d-flex">
+                        <button (click)="selectFileColor('bio-pink')">Pink</button>
+                        <button (click)="selectFileColor('bio-yellow')">Yellow</button>
+                        <button (click)="selectFileColor('bio-green')">Green</button>
+                        <button (click)="selectFileColor('bio-blue')">Blue</button>
+                    </div>
+            }
       
     <div class="col-12"> <div class="cv">button </div></div> 
 }
