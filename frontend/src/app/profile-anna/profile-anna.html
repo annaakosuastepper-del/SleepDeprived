@@ -27,19 +27,31 @@
     }
     <div class="row g-3 mt-2 px-3">
 
-        <div class="col-md-4 ">
+        <div class="col-md-4 d-felx flex column align-items center">
             @if(isAdmin){
              <div class="pen" >  
                 <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button>
                 
             </div>
-            <button class="bg-transparent border-0" (click)="showHeaderOptions = !showHeaderOptions" ><img src="assets/Paint.png" class="pen" ></button>  
+            <button class="bg-transparent border-0" (click)="showFrameOptions =! showFrameOptions" ><img src="assets/Paint.png" class="pen" ></button>  
             }
-          @if(profile()[0].profilePicture){
-                    <div class="d-flex justify-content-center"> <img [src]="'http://localhost:3000/profilePic/' + profile()[0].profilePicture" class="img-fluid"> </div>
-                }
+
           
-                
+
+        <div class="profile-pic-container ">
+          @if(profile()[0].profilePicture){
+                    <div class="d-flex justify-content-center"> 
+                    <img [src]="'http://localhost:3000/profilePic/' + profile()[0].profilePicture" class="img-fluid"> 
+                     <img [src]="'assets/' + selectedFrame" class="frame">
+                </div>
+                }
+          </div>
+                  @if(showFrameOptions){
+                 <button (click)="selectFrame('flowerFrame.png')"><img src="assets/flowerFrame.png" class="profile-pic-container img.frame"></button>
+                <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="profile-pic-container img.frame"></button>
+                 <button (click)="selectFrame('fruitFrame.png')"><img src="assets/fruitFrame.png" class="profile-pic-container img.frame"></button>
+                <button (click)="selectFrame('')"> None </button>
+            }
                     <div class="modal fade" id="updateProfilePicModal" tabindex="-1" (dragover)="onDragOver($event)" 
                                 (drop)="onDrop($event)">
                             <div class="modal-dialog" role="document">

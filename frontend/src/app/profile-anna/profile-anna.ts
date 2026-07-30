@@ -198,4 +198,13 @@ async updatePic(){
     await this.backendService.update('anna', this.profile()[0]);
  }
 
+  showFrameOptions = false;
+  selectedFrame = '';
+
+  async selectFrame(frameName: string){
+    this.selectedFrame = frameName;
+    this.profile()[0].pictureFrame = frameName;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
+
 }

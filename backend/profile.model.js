@@ -8,6 +8,13 @@ const profileSchema = new mongoose.Schema({
     profilePicture: String,
     boxes: [{title: String, content:String}],
     files: [String],
+    bioColor: String,
+    boxColor: String,
+    cvHeader: String,
+    fileBoxColor: String,
+    fileColor: String,
+    roleColor: String,
+    pictureFrame: String,
    
 
 })
