@@ -25,32 +25,35 @@
         <button (click)="selectHeader('annaTitle6.png')"><img src="assets/annaTitle6.png"></button>  
      </div>
     }
-    <div class="row g-3 mt-2 px-3">
+      @if(isAdmin){
+            <div class="row">
 
-        <div class="col-md-4 d-felx flex column align-items center">
-            @if(isAdmin){
-             <div class="pen" >  
-                <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button>
-                
-            </div>
-            <button class="bg-transparent border-0" (click)="showFrameOptions =! showFrameOptions" ><img src="assets/Paint.png" class="pen" ></button>  
+                <div class="pen col-md- 4" >  
+                    <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button>
+                </div>
+                <div class="col-md-4">
+                <button class="bg-transparent border-0" (click)="showFrameOptions =! showFrameOptions" ><img src="assets/Paint.png" class="pen" ></button>   
+                </div>
+             </div>
             }
+    <div class="row align-items-start">
 
-          
+        <div class="col-md-4 d-flex justify-content-center">
 
         <div class="profile-pic-container ">
+            
           @if(profile()[0].profilePicture){
                     <div class="d-flex justify-content-center"> 
                     <img [src]="'http://localhost:3000/profilePic/' + profile()[0].profilePicture" class="img-fluid"> 
-                     <img [src]="'assets/' + selectedFrame" class="frame">
+                    <img [src]="'assets/' + selectedFrame" class="frame">
                 </div>
                 }
           </div>
                   @if(showFrameOptions){
                  <button (click)="selectFrame('flowerFrame.png')"><img src="assets/flowerFrame.png" class="profile-pic-container img.frame"></button>
-                <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="profile-pic-container img.frame"></button>
+                 <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="profile-pic-container img.frame"></button>
                  <button (click)="selectFrame('fruitFrame.png')"><img src="assets/fruitFrame.png" class="profile-pic-container img.frame"></button>
-                <button (click)="selectFrame('')"> None </button>
+                 <button (click)="selectFrame('')"> None </button>
             }
                     <div class="modal fade" id="updateProfilePicModal" tabindex="-1" (dragover)="onDragOver($event)" 
                                 (drop)="onDrop($event)">
@@ -79,9 +82,9 @@
     
             </div> 
             
-            <div class="col-md-8 ">
+            <div class="col-md-8">
 
-                <div class="profile-bio">
+                <div [class]="selectedBioColor ">
                     <div class= "row">
                         <div class="col-10 "><div class="title"> <h3>Bio </h3></div></div>
                         
@@ -90,13 +93,22 @@
                                 <div class="pen" >  
                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/bio/0"></button> 
                                 </div>
+                                <button class="bg-transparent border-0" (click)="showBioColorOptions =! showBioColorOptions" ><img src="assets/Paint.png" class="pen" ></button>  
                             }
                         </div>
                         <div class="col-12"> <div class="text-box"> <span [innerHTML]="profile()[0].bio"></span>  </div></div>
                     </div>
                 </div>
+                @if(showBioColorOptions){
+                <div class="d-flex">
+                    <button (click)="selectBioColor('bio-pink')">Pink</button>
+                    <button (click)="selectBioColor('bio-blue')">Blue</button>
+                    <button (click)="selectBioColor('bio-green')">Green</button>
+                </div>
+
+            }
             </div>
-        
+            
     </div>
 
     <div class="row g-3 mt-2 px-3"> 

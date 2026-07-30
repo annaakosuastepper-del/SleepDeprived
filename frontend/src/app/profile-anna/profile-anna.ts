@@ -25,6 +25,8 @@ export class ProfileAnna implements OnInit {
     this.profile.set(data);
     console.log('Profile-anna:', this.profile());
     this.selectedHeader = this.profile()[0].headerImage || 'annaTitle1.png';
+    this.selectedFrame = this.profile()[0].pictureFrame || '';
+    this.selectedBioColor = this.profile()[0].bioColor || '';
   }
 
   async deleteOne(index: number) {
@@ -207,4 +209,12 @@ async updatePic(){
     await this.backendService.update('anna', this.profile()[0]);
   }
 
+  showBioColorOptions = false;
+  selectedBioColor = '';
+
+   async selectBioColor(bioColor: string){
+    this.selectedBioColor = bioColor;
+    this.profile()[0].bioColor = bioColor;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
 }
