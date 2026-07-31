@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -52,6 +53,63 @@ export class Login {
 
       
     }
+
+    mouseX = 0;
+    mouseY = 0;
+    img1X = 0; img1Y = 0;
+    img2X = 0; img2Y = 0;
+
+    @HostListener('mousemove', ['$event'])
+  
+    onMouseMove(event: MouseEvent) {
+   this.mouseX = event.clientX;
+  this.mouseY = event.clientY;
+
+  // img2
+  const img1CenterX = window.innerWidth * 0.1;
+  const img1CenterY = window.innerHeight * 0.5;
+
+  const dist1 = Math.sqrt(
+    Math.pow(this.mouseX - img1CenterX, 2) +
+    Math.pow(this.mouseY - img1CenterY, 2)
+  );
+
+  if (dist1 < 500) {
+    this.img1X = (this.mouseX - img1CenterX) * 0.3;
+    this.img1Y = (this.mouseY - img1CenterY) * 0.3;
+  } else {
+    this.img1X = 0;
+    this.img1Y = 0;
+  }
+
+   // img2
+  const img2CenterX = window.innerWidth * 0.1;
+  const img2CenterY = window.innerHeight * 0.5;
+
+  const dist2 = Math.sqrt(
+    Math.pow(this.mouseX - img1CenterX, 2) +
+    Math.pow(this.mouseY - img1CenterY, 2)
+  );
+
+  if (dist1 < 500) {
+    this.img2X = (this.mouseX - img1CenterX) * 0.3;
+    this.img2Y = (this.mouseY - img1CenterY) * 0.3;
+  } else {
+    this.img2X = 0;
+    this.img2Y = 0;
+  }
+
+
+
+
+
+
+ 
+
+
+
+
+}
 
 }
 

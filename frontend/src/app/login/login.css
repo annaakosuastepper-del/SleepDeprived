@@ -1,0 +1,47 @@
+.floating-img {
+  width: 100px;
+  position: absolute;
+  
+}
+
+.floating-img-1 { 
+    top: 50%; 
+    left: 10%; 
+}
+.floating-img-2 { 
+    top: 20; 
+    right: 10%; 
+}
+.floating-img-3 { 
+    bottom: 0%; 
+    left: 30%; 
+}
+.floating-img-4 { 
+    top: 10%; 
+    right: 30%; 
+}
+
+.floating-img-5 { 
+    top: 10%;
+    left: 20%; 
+}
+
+.floating-img-6 { 
+    bottom: 10%;
+    left: 60%; 
+}
+
+.floating-img-7 { 
+    bottom: 10%;
+    left: 1%; 
+}
+
+.floating-img-8 { 
+    left: 60%; 
+}
+
+.floating-img-9 { 
+    top : 15%;
+    left: 2%; 
+}
+
