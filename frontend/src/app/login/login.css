@@ -6,11 +6,11 @@
 
 .floating-img-1 { 
     top: 50%; 
-    left: 10%; 
+    left: 15%; 
 }
 .floating-img-2 { 
-    top: 20; 
-    right: 10%; 
+    top: 25%; 
+    right: 15%; 
 }
 .floating-img-3 { 
     bottom: 0%; 
@@ -37,7 +37,8 @@
 }
 
 .floating-img-8 { 
-    left: 60%; 
+    left: 65%; 
+    top: 35%;
 }
 
 .floating-img-9 { 
