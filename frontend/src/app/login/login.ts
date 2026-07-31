@@ -65,6 +65,9 @@ export class Login {
     img7X = 0; img7Y = 0;
     img8X = 0; img8Y = 0;
     img9X = 0; img9Y = 0;
+    img10X = 0; img10Y = 0;
+    img11X = 0; img11Y = 0;
+
 
 
 
@@ -92,7 +95,7 @@ export class Login {
   }
 
    // img2
-  const img2CenterX = window.innerWidth * 0.85;
+  const img2CenterX = window.innerWidth * 0.9;
   const img2CenterY = window.innerHeight * 0.25;
 
   const dist2 = Math.sqrt(
@@ -134,7 +137,7 @@ export class Login {
     Math.pow(this.mouseY - img4CenterY, 2)
   );
 
-  if (dist4 < 150) {
+  if (dist4 < 250) {
     this.img4X = (this.mouseX - img4CenterX) * 0.3;
     this.img4Y = (this.mouseY - img4CenterY) * 0.3;
   } else {
@@ -151,7 +154,7 @@ export class Login {
     Math.pow(this.mouseY - img5CenterY, 2)
   );
 
-  if (dist5 < 150) {
+  if (dist5 < 250) {
     this.img5X = (this.mouseX - img5CenterX) * 0.3;
     this.img5Y = (this.mouseY - img5CenterY) * 0.3;
   } else {
@@ -185,7 +188,7 @@ export class Login {
     Math.pow(this.mouseY - img7CenterY, 2)
   );
 
-  if (dist7 < 450) {
+  if (dist7 < 250) {
     this.img7X = (this.mouseX - img7CenterX) * 0.3;
     this.img7Y = (this.mouseY - img7CenterY) * 0.3;
   } else {
@@ -194,15 +197,15 @@ export class Login {
   }
 
    // img8
-  const img8CenterX = window.innerWidth * 0.65;
-  const img8CenterY = window.innerHeight * 0.35 ;
+  const img8CenterX = window.innerWidth * 0.7;
+  const img8CenterY = window.innerHeight * 0.45 ;
 
   const dist8 = Math.sqrt(
     Math.pow(this.mouseX - img8CenterX, 2) +
     Math.pow(this.mouseY - img8CenterY, 2)
   );
 
-  if (dist8 < 450) {
+  if (dist8 < 250) {
     this.img8X = (this.mouseX - img8CenterX) * 0.3;
     this.img8Y = (this.mouseY - img8CenterY) * 0.3;
   } else {
@@ -225,6 +228,40 @@ export class Login {
   } else {
     this.img9X = 0;
     this.img9Y = 0;
+  }
+
+   // img10
+  const img10CenterX = window.innerWidth * 0.45;
+  const img10CenterY = window.innerHeight * 0.1 ;
+
+  const dist10 = Math.sqrt(
+    Math.pow(this.mouseX - img10CenterX, 2) +
+    Math.pow(this.mouseY - img10CenterY, 2)
+  );
+
+  if (dist10 < 250) {
+    this.img10X = (this.mouseX - img10CenterX) * 0.3;
+    this.img10Y = (this.mouseY - img10CenterY) * 0.3;
+  } else {
+    this.img10X = 0;
+    this.img10Y = 0;
+  }
+
+  // img11
+  const img11CenterX = window.innerWidth * 0.8;
+  const img11CenterY = window.innerHeight * 0.8 ;
+
+  const dist11 = Math.sqrt(
+    Math.pow(this.mouseX - img11CenterX, 2) +
+    Math.pow(this.mouseY - img11CenterY, 2)
+  );
+
+  if (dist11 < 250) {
+    this.img11X = (this.mouseX - img11CenterX) * 0.3;
+    this.img11Y = (this.mouseY - img11CenterY) * 0.3;
+  } else {
+    this.img11X = 0;
+    this.img11Y = 0;
   }
 
 
