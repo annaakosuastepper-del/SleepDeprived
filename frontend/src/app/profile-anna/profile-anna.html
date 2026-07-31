@@ -50,11 +50,13 @@
                 }
           </div>
                   @if(showFrameOptions){
+                    <div class="row">
                  <button (click)="selectFrame('flowerFrame.png')"><img src="assets/flowerFrame.png" class="profile-pic-container img.frame"></button>
                  <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="profile-pic-container img.frame"></button>
                  <button (click)="selectFrame('fruitFrame.png')"><img src="assets/fruitFrame.png" class="profile-pic-container img.frame"></button>
                  <button (click)="selectFrame('')"> None </button>
-            }
+                    </div>
+                }
                     <div class="modal fade" id="updateProfilePicModal" tabindex="-1" (dragover)="onDragOver($event)" 
                                 (drop)="onDrop($event)">
                             <div class="modal-dialog" role="document">
