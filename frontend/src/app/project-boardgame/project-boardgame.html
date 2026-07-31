@@ -1,16 +1,44 @@
 <app-nav></app-nav>
 
-<div class="container-fluid" style="background-color: rgb(125, 90, 173);" >
+
+
+<div class="container-fluid" style="background: radial-gradient(ellipse at top, #3d1a6e, rgb(48, 21, 84), #1a0a30);" >
     
-    <div class="row">
+    <div class="row" >
          <div class="col-12 text-center ">
-             <h1 class ="name">Boardgame Madness</h1>
+             <img src="assets/boardgameLogo.png"  >
         </div>
     </div>
 
-    <div class="row g-3 mt-3 px-3" >
-        <div class="col-md-3"> <div class="gamelogo">Game logo</div></div>
-        <div class="col-md-5"> <div class=" whatis"> What is Boardgame Madness</div></div>
+    <div id="carouselExampleIndicators" class="carousel slide mx-auto " data-bs-ride="carousel" style="width: 100%;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner ">
+        <div class="carousel-item active">
+        <img src="assets/gameView1.png" class="d-block w-100"  alt="gameView1">
+        </div>
+        <div class="carousel-item">
+        <img src="assets/gameView2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src="assets/stayTuned.jpg" class="d-block w-50" alt="...">
+        </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+    <div class="row g-3 mt-3 px-3 align-items-stretch" >
+        <div class="col-md-8"> <div class=" whatis"> <h3>What is Boardgame Madness</h3> </div></div>
         <div class="col-md-4"> <div class=" timeline">Projekt timeline</div></div>
     </div>
 
@@ -24,3 +52,5 @@
 <div class="row">
     <div class="col-12 gameplay">Gameplay</div>
 </div>
+
+<app-footer></app-footer>
