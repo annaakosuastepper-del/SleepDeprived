@@ -228,3 +228,8 @@
 .nes-container {
   border-color: black !important;
 }
+
+.modal-content {
+  background-color: #301554 !important;
+  color: #F6C45C;
+}
