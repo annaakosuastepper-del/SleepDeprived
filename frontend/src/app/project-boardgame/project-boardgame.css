@@ -89,3 +89,9 @@ h3 {
 .group{
     width:500px;
 }
+
+.remote{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
