@@ -22,8 +22,9 @@ export class ProjectBoardgame {
 
     document.querySelectorAll('.slide-in').forEach(el => observer.observe(el));
     
-   
+
   }
+   img1X = 150; img1Y = 0;
 
   
 }
