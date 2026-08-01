@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './profile-brenda.html',
   styleUrl: './profile-brenda.css',
 })
-export class ProfileNina implements OnInit {
+export class ProfileBrenda implements OnInit {
    profile= signal<Profile[]>([]);
 
   backendService = inject(BackendService);
