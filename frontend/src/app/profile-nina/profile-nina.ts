@@ -33,8 +33,8 @@ export class ProfileNina implements OnInit {
   }
 
   async deleteOne(index: number) {
-    await this.backendService.deleteOne('hari', index);
-    const data = await this.backendService.getOne('hari');
+    await this.backendService.deleteOne('nina', index);
+    const data = await this.backendService.getOne('nina');
     this.profile.set(data);
   }
 
@@ -92,9 +92,9 @@ export class ProfileNina implements OnInit {
     for(let file of this.selectedFiles){
         this.profile()[0].files.push(file.name);
     }
-    await this.backendService.update('hari', this.profile()[0]);
+    await this.backendService.update('nina', this.profile()[0]);
 
-    const updated = await this.backendService.getOne('hari');
+    const updated = await this.backendService.getOne('nina');
     this.profile.set(updated);
     this.selectedFiles = [];
   }
@@ -116,8 +116,8 @@ export class ProfileNina implements OnInit {
     const fileIndex = this.profile()[0].files.indexOf(fileName);
     if(fileIndex !== -1){
         this.profile()[0].files.splice(fileIndex, 1);
-        await this.backendService.update('hari', this.profile()[0]);
-        const data = await this.backendService.getOne('hari');
+        await this.backendService.update('nina', this.profile()[0]);
+        const data = await this.backendService.getOne('nina');
         this.profile.set(data);
     }
 
