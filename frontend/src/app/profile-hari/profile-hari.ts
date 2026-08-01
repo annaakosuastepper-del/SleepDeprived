@@ -10,7 +10,7 @@ import { RouterLink, Router } from "@angular/router";
 
 
 @Component({
-  selector: 'app-profile-anna',
+  selector: 'app-profile-hari',
   imports: [Nav, Footer, CommonModule, RouterLink ],
   templateUrl: './profile-hari.html',
   styleUrl: './profile-hari.css',
@@ -21,7 +21,8 @@ export class ProfileHari implements OnInit {
   backendService = inject(BackendService);
 
   async ngOnInit() {
-    const data = await this.backendService.getAll();
+    const data = await this.backendService.getOne('hari');
+    const filtered = data.filter((p: any) => p.name === 'hari');
     this.profile.set(data);
     console.log('Profile-hari:', this.profile());
     this.selectedHeader = this.profile()[0].headerImage || 'hariTitle1.png';
@@ -36,7 +37,7 @@ export class ProfileHari implements OnInit {
 
   async deleteOne(index: number) {
     await this.backendService.deleteOne('hari', index);
-    const data = await this.backendService.getAll();
+    const data = await this.backendService.getOne('hari');
     this.profile.set(data);
 }
 searchTerm= '';
@@ -101,7 +102,7 @@ onDragOver(event: DragEvent) {
         await this.backendService.update('hari', this.profile()[0]);
         
         // refresh profile
-        const updated = await this.backendService.getAll();
+        const updated = await this.backendService.getOne('hari');
         this.profile.set(updated);
         this.selectedFiles = [];
   }
@@ -127,7 +128,7 @@ onDragOver(event: DragEvent) {
     if(fileIndex !== -1){
         this.profile()[0].files.splice(fileIndex, 1);
         await this.backendService.update('hari', this.profile()[0]);
-        const data = await this.backendService.getAll();
+        const data = await this.backendService.getOne('hari');
         this.profile.set(data);
     }
     
@@ -171,7 +172,7 @@ async uploadPic() {
  this.profile()[0].profilePicture = this.selectedFileName;
   await this.backendService.update('hari', this.profile()[0]);
 
-    const updated = await this.backendService.getAll();
+    const updated = await this.backendService.getOne('hari');
     this.profile.set(updated);
 
     this.selectedFiles = [];

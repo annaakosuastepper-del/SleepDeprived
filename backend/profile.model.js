@@ -15,7 +15,9 @@ const profileSchema = new mongoose.Schema({
     fileColor: String,
     roleColor: String,
     pictureFrame: String,
-   
+    skillsColor: String,
+    skills: String,
+   socialLinks: [{ platform: String, url: String }]
 
 })
 

@@ -5,7 +5,7 @@ const Profile = require('./profile.model')
 //GET one profile by name
 router.get('/profiles/:name', async(req, res) => {
     console.log( 'Looking for:',req.params.name)
-    const profile = await Profile.find()
+    const profile = await Profile.find({name: req.params.name})
     console.log('All profiles', profile)
     res.json(profile)
 })

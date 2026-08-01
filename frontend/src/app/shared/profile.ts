@@ -10,7 +10,10 @@ export interface Profile {
   fileColor: string,
   roleColor: string,
   pictureFrame: string,
+  skillsColor: string,
+  skills: string;
   boxes: { title: string; content: string }[];
   files: string[];
+  socialLinks: {platform: string, url: string}[];
   
 }

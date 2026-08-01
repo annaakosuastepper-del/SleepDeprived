@@ -30,7 +30,8 @@ export class ProfileEdit implements OnInit{
     bioControl : new FormControl<string>(''),
     roleControl: new FormControl<string>(''),
     titleControl: new FormControl<string>(''),
-    contentControl: new FormControl<string>('')
+    contentControl: new FormControl<string>(''),
+    skillsControl: new FormControl<string>(''),
     });
 
 
@@ -70,6 +71,8 @@ export class ProfileEdit implements OnInit{
         this.profile.bio =  values.bioControl!;
       }
       if(this.field === 'role')this.profile.role = values.roleControl!;
+
+      if(this.field === 'skills')this.profile.skills = values.skillsControl!;
       
       if(this.field === 'boxes'&& this.index === 'new'){
          console.log('title:', values.titleControl);

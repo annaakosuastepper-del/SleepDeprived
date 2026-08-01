@@ -5,13 +5,14 @@ import { BackendService } from '../shared/backend';
 import { CommonModule } from '@angular/common';
 import { Profile } from '../shared/profile';
 import { RouterLink, Router } from "@angular/router";
+import { FormsModule } from '@angular/forms';
 
 
 
 
 @Component({
   selector: 'app-profile-anna',
-  imports: [Nav, Footer, CommonModule, RouterLink ],
+  imports: [Nav, Footer, CommonModule, RouterLink, FormsModule ],
   templateUrl: './profile-anna.html',
   styleUrl: './profile-anna.css',
 })
@@ -31,6 +32,7 @@ export class ProfileAnna implements OnInit {
     this.selectedCv = this.profile()[0].cvHeader || '';
     this.selectedBox = this.profile()[0].boxColor || '';
     this.selectedFileColor = this.profile()[0].fileBoxColor || '';
+    this.selectedSkillsColor = this.profile()[0].skillsColor || '';
 
   }
 
@@ -258,6 +260,18 @@ async updatePic(){
     this.profile()[0].fileBoxColor = file;
     await this.backendService.update('anna', this.profile()[0]);
   }
+
+  showSkillsOptions = false;
+  selectedSkillsColor = '';
+
+  async selectSkillsColor(file: string){
+    this.selectedSkillsColor= file;
+    this.profile()[0].skillsColor = file;
+    await this.backendService.update('anna', this.profile()[0]);
+  }
+
+
+
 leftPupilX = 0; leftPupilY = 0;
 rightPupilX = 0; rightPupilY = 0;
 
@@ -281,6 +295,16 @@ prevProfile() {
 nextProfile() {
   this.router.navigate(['/profile/brenda']); // needs to be changed to the next profile page when it is created
   console.log('Next profile button clicked', this.router.url);
+}
+
+newLinkPlatform = '';
+newLinkUrl = '';
+
+async addLink(platform: string, url: string) {
+  this.profile()[0].socialLinks.push({ platform, url });
+
+  await this.backendService.update('anna', this.profile()[0]);
+  
 }
 
 }

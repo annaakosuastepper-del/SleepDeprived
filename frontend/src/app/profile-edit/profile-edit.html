@@ -20,6 +20,9 @@
                 <quill-editor [format]="'html'" formControlName="titleControl"></quill-editor>
                 <quill-editor [format]="'html'" formControlName="contentControl"></quill-editor>
             }
+             @if (field == 'skills'){
+                <quill-editor type="text" formControlName="skillsControl"></quill-editor>
+            }
        </div>
         </div>
          <div class="row gx-0 mt-5 d-flex justify-content-center">

@@ -25,6 +25,11 @@
         <button (click)="selectHeader('annaTitle6.png')">Green</button>  
      </div>
     }
+    <div class="row g-3 mt-2 px-3 align-items-center">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h1 style="font-size: 2rem; font-weight: bold; color: #F6C45C;">Haupt-Entwicklerin & System-Architektin</h1>
+        </div>
+    </div>
       @if(isAdmin){
             <div class="row">
 
@@ -88,7 +93,7 @@
                 
                 <div  [class]="'nes-container is-rounded ' + selectedBioColor">
                     <div class= "row ">
-                        <div class=" col-md-8 "><div class="title"> <h3>Bio </h3></div></div>
+                        <div class=" col-md-8 "><div class="title"> <h3 style="font-size: 2.5rem; font-weight: bold; ">Über mich </h3></div></div>
                         
                             <div class="col-2" >
                                 @if(isAdmin){
@@ -116,11 +121,11 @@
 
     <div class="row g-3 mt-2 px-3 align-items-center"> 
           
-        <div class="col-md-8" >
+        <div class="col-md-4" >
                     
           <div  [class]="'nes-container is-rounded  ' + selectedRoleColor" >
                 <div class="row" >
-                    <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
+                    <div class="col-10 "><div class="title"> <h3 style="font-size: 2.5rem; font-weight: bold; "> Skills </h3></div></div>
                         
                     <div class="col-2" >
                         @if(isAdmin){
@@ -150,7 +155,7 @@
         </div>
                     
       
- <div class="col-md-4">        
+ <div class="col-md-4 d-flex justify-content-center">        
 <div class="pixel-wrapper">
         
             <div class="pixel-me" #pixelMe>
@@ -166,7 +171,42 @@
         </div> 
 
     </div>
-</div>
+
+    <div class="col-md-4" >
+                    
+          <div  [class]="'nes-container is-rounded  ' + selectedSkillsColor" >
+                <div class="row" >
+                    <div class="col-10 "><div class="title"> <h3 style="font-size: 2.5rem; font-weight: bold; "> Social Links </h3></div></div>
+                        
+                    <div class="col-2" >
+                        @if(isAdmin){
+                         <div class="pen" >  
+                            <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/skills/0"></button> 
+                        </div>
+                        <button class="bg-transparent border-0" (click)="showSkillsOptions =! showSkillsOptions" ><img src="assets/Paint.png" class="pen" ></button>  
+                    }
+                    </div>
+                </div>
+                    
+                        <div class="row" >
+                            <div class="col-12"> 
+                                <div class="text-box"><span [innerHTML]="profile()[0].skills"></span> </div>
+                            </div>
+                        </div>
+                      
+                        </div>
+                @if(showSkillsOptions){
+                    <div class="d-flex">
+                        <button (click)="selectSkillsColor('bio-pink')">Pink</button>
+                        <button (click)="selectSkillsColor('bio-yellow')">Yellow</button>
+                        <button (click)="selectSkillsColor('bio-green')">Green</button>
+                        <button (click)="selectSkillsColor('bio-blue')">Blue</button>
+                    </div>
+            }
+        </div>
+
+    </div>
+
     <div class="row g-3 mt-2 px-3">
         <div class="row g-3 mt-2 px-3 col-12"> 
             <div class="d-flex justify-content-between align-items-center">
