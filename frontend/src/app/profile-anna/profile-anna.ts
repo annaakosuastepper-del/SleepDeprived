@@ -28,7 +28,7 @@ export class ProfileAnna implements OnInit {
     this.selectedHeader = this.profile()[0].headerImage || 'annaTitle1.png';
     this.selectedFrame = this.profile()[0].pictureFrame || '';
     this.selectedBioColor = this.profile()[0].bioColor || '';
-    this.selectedRoleColor = this.profile()[0].roleColor || '';
+    this.selectedSocialColor = this.profile()[0].socialColor || '';
     this.selectedCv = this.profile()[0].cvHeader || '';
     this.selectedBox = this.profile()[0].boxColor || '';
     this.selectedFileColor = this.profile()[0].fileBoxColor || '';
@@ -225,12 +225,12 @@ async updatePic(){
     await this.backendService.update('anna', this.profile()[0]);
   }
 
-  showRoleColorOptions = false;
-  selectedRoleColor ='';
+  showSocialColorOptions = false;
+  selectedSocialColor ='';
 
-  async selectRoleColor(roleColor: string){
-    this.selectedRoleColor = roleColor;
-    this.profile()[0].roleColor = roleColor;
+  async selectSocialColor(socialColor: string){
+    this.selectedSocialColor = socialColor;
+    this.profile()[0].socialColor = socialColor;
     await this.backendService.update('anna', this.profile()[0]);
   }
 

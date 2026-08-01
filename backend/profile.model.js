@@ -13,11 +13,11 @@ const profileSchema = new mongoose.Schema({
     cvHeader: String,
     fileBoxColor: String,
     fileColor: String,
-    roleColor: String,
+    socialColor: String,
     pictureFrame: String,
     skillsColor: String,
     skills: String,
-   socialLinks: [{ platform: String, url: String }]
+    socialLinks: [{ platform: String, url: String }]
 
 })
 

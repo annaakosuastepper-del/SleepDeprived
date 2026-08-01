@@ -21,12 +21,10 @@ router.get('/profiles/', async(req, res) => {
 //PUT - update a profile
 router.put('/profiles/:name', async(req,res) => {
     const{_id, ...updateData} = req.body;
-    const profile = await Profile.findOneAndUpdate(
-    {name: req.params.name},
-    {$set: updateData},
-    {returnDocument: 'after', runValidators: true } //from the console
-)
-    res.json (profile)
+     const profile = await Profile.findOne({ name: req.params.name });
+    Object.assign(profile, updateData);
+    await profile.save();
+    res.json(profile);
 })
 //push() — adds to the end of the array
 //unshift() — adds to the beginning

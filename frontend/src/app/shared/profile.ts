@@ -8,7 +8,7 @@ export interface Profile {
   cvHeader: string,
   fileBoxColor: string,
   fileColor: string,
-  roleColor: string,
+  socialColor: string,
   pictureFrame: string,
   skillsColor: string,
   skills: string;

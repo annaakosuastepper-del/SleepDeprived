@@ -119,11 +119,11 @@
             
     </div>
 
-    <div class="row g-3 mt-2 px-3 align-items-center"> 
+    <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center"> 
           
         <div class="col-md-4" >
                     
-          <div  [class]="'nes-container is-rounded  ' + selectedRoleColor" >
+          <div  [class]="'nes-container is-rounded  ' + selectedSkillsColor" >
                 <div class="row" >
                     <div class="col-10 "><div class="title"> <h3 style="font-size: 2.5rem; font-weight: bold; "> Skills </h3></div></div>
                         
@@ -132,7 +132,7 @@
                          <div class="pen" >  
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/role/0"></button> 
                         </div>
-                        <button class="bg-transparent border-0" (click)="showRoleColorOptions =! showRoleColorOptions" ><img src="assets/Paint.png" class="pen" ></button>  
+                        <button class="bg-transparent border-0" (click)="showSkillsOptions =! showSkillsOptions" ><img src="assets/Paint.png" class="pen" ></button>  
                     }
                     </div>
                 </div>
@@ -144,23 +144,25 @@
                         </div>
                       
                         </div>
-                @if(showRoleColorOptions){
+                @if(showSkillsOptions){
                     <div class="d-flex">
-                        <button (click)="selectRoleColor('bio-pink')">Pink</button>
-                        <button (click)="selectRoleColor('bio-yellow')">Yellow</button>
-                        <button (click)="selectRoleColor('bio-green')">Green</button>
-                        <button (click)="selectRoleColor('bio-blue')">Blue</button>
+                        <button (click)="selectSkillsColor('bio-pink')">Pink</button>
+                        <button (click)="selectSkillsColor('bio-yellow')">Yellow</button>
+                        <button (click)="selectSkillsColor('bio-green')">Green</button>
+                        <button (click)="selectSkillsColor('bio-blue')">Blue</button>
                     </div>
             }
         </div>
                     
       
- <div class="col-md-4 d-flex justify-content-center">    
+ <div class="col-md-4 d-flex justify-content-center">  
+    <div class="pixel-wrapper">
     <a href="mailto:annaakosua.stepper@gmail.com"  target="_blank">
         <img src="assets/star.png" class="contaxct" >
     
     </a>
     <p style="color:#F6C45C"> Contact me :)</p>
+    </div>
 <div class="pixel-wrapper">
         
             <div class="pixel-me" #pixelMe>
@@ -179,7 +181,7 @@
 
     <div class="col-md-4" >
                     
-          <div  [class]="'nes-container is-rounded  ' + selectedSkillsColor" >
+          <div  [class]="'nes-container is-rounded  ' + selectedSocialColor" >
                 <div class="row" >
                     <div class="col-10 "><div class="title"> <h3 style="font-size: 2.5rem; font-weight: bold; "> Social Links </h3></div></div>
                         
@@ -188,7 +190,7 @@
                          <div class="pen" >  
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#socialLinksModal"></button> 
                         </div>
-                        <button class="bg-transparent border-0" (click)="showSkillsOptions =! showSkillsOptions" ><img src="assets/Paint.png" class="pen" ></button>  
+                        <button class="bg-transparent border-0" (click)="showSocialColorOptions =! showSocialColorOptions" ><img src="assets/Paint.png" class="pen" ></button>  
                     }
                     </div>
                 </div>
@@ -196,21 +198,21 @@
                         <div class="row" >
                             <div class="col-12"> 
                                  @for (link of profile()[0].socialLinks; track link) {
-                                    <div class="text-box" >
+                                    
                                         <a [href]="link.url" target="_blank" rel="noopener" style="font-size: 1.25rem; color: inherit;"> 
-                                            <i class="fa-brands" [ngClass]="'fa-' + (link.platform ?? '').toLowerCase()"> </i>{{ link.platform }} </a>
-                                            </div>
+                                            <i class="fa-brands" [ngClass]="'fa-' + (link.platform ?? '').toLowerCase()"> </i> <span>{{ link.platform }}</span> </a>
+                                            
                                     }
                             </div>
                         </div>
                       
                         </div>
-                @if(showSkillsOptions){
+                @if(showSocialColorOptions){
                     <div class="d-flex">
-                        <button (click)="selectSkillsColor('bio-pink')">Pink</button>
-                        <button (click)="selectSkillsColor('bio-yellow')">Yellow</button>
-                        <button (click)="selectSkillsColor('bio-green')">Green</button>
-                        <button (click)="selectSkillsColor('bio-blue')">Blue</button>
+                        <button (click)="selectSocialColor('bio-pink')">Pink</button>
+                        <button (click)="selectSocialColor('bio-yellow')">Yellow</button>
+                        <button (click)="selectSocialColor('bio-green')">Green</button>
+                        <button (click)="selectSocialColor('bio-blue')">Blue</button>
                     </div>
             }
 
