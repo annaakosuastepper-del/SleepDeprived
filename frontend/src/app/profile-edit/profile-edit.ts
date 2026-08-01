@@ -50,7 +50,7 @@ export class ProfileEdit implements OnInit{
       this.form.patchValue({
         bioControl: this.profile?.bio,
         roleControl: this.profile?.role,
-        titleControl: this.profile?.boxes[this.index]?.content,
+        titleControl: this.profile?.boxes[this.index]?.title,
         contentControl: this.profile?.boxes[this.index]?.content
       })
 
@@ -72,6 +72,8 @@ export class ProfileEdit implements OnInit{
       if(this.field === 'role')this.profile.role = values.roleControl!;
       
       if(this.field === 'boxes'&& this.index === 'new'){
+         console.log('title:', values.titleControl);
+          console.log('content:', values.contentControl);
         this.bs.createBox(this.name!, {title: values.titleControl!, content: values.contentControl!})
         .then( () => this.router.navigate(['profile/'+this.name] ))
         return

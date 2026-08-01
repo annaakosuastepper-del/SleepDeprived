@@ -16,13 +16,13 @@
         </div>
      </div>
     @if(showHeaderOptions){
-     <div class="row">
-        <button (click)="selectHeader('annaTitle1.png')"><img src="assets/annaTitle1.png"></button>
-        <button (click)="selectHeader('annaTitle2.png')"><img src="assets/annaTitle2.png"></button>
-        <button (click)="selectHeader('annaTitle3.png')"><img src="assets/annaTitle3.png"></button>
-        <button (click)="selectHeader('annaTitle4.png')"><img src="assets/annaTitle4.png"></button>
-        <button (click)="selectHeader('annaTitle5.png')"><img src="assets/annaTitle5.png"></button>
-        <button (click)="selectHeader('annaTitle6.png')"><img src="assets/annaTitle6.png"></button>  
+     <div class="d-flex justify-content-center">
+        <button (click)="selectHeader('annaTitle1.png')">Yellow</button>
+        <button (click)="selectHeader('annaTitle2.png')">Pink</button>
+        <button (click)="selectHeader('annaTitle3.png')">Blue</button>
+        <button (click)="selectHeader('annaTitle4.png')">Pink</button>
+        <button (click)="selectHeader('annaTitle5.png')">Purple</button>
+        <button (click)="selectHeader('annaTitle6.png')">Green</button>  
      </div>
     }
       @if(isAdmin){
@@ -31,15 +31,13 @@
                 <div class="pen col-md- 4" >  
                     <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button>
                 </div>
-                <div class="col-md-4">
-                <button class="bg-transparent border-0" (click)="showFrameOptions =! showFrameOptions" ><img src="assets/Paint.png" class="pen" ></button>   
-                </div>
+                
              </div>
             }
     <div class="row g-3 mt-2 px-3 align-items-center">
 
         <div class="col-md-4 d-flex justify-content-center">
-
+            
         <div class="profile-pic-container ">
             
           @if(profile()[0].profilePicture){
@@ -184,21 +182,21 @@
         
          @if(showCvOptions){
                     <div class="d-flex">
-                        <button (click)="selectCv('Lebenslauf1.png')">Pink</button>
+                        <button (click)="selectCv('Lebenslauf1.png')">Purple</button>
                         <button (click)="selectCv('Lebenslauf2.png')">Yellow</button>
-                        <button (click)="selectCv('Lebenslauf3.png')">Green</button>
-                        <button (click)="selectCv('Lebenslauf4.png')">Blue</button>
+                        <button (click)="selectCv('Lebenslauf3.png')">Pink</button>
+                        <button (click)="selectCv('Lebenslauf4.png')">Green</button>
                         <button (click)="selectCv('Lebenslauf5.png')">Blue</button>
                     </div>
             }
                 @for (box of profile()[0].boxes; track box; let i = $index){
                     @if(box.title.toLowerCase().includes(searchTerm) || box.content.toLowerCase().includes(searchTerm)){
-                <div class="col-md-4">
+                <div class="col-md-4 ">
                     <div  [class]="'nes-container is-rounded ' + selectedBox" >
 
                     <div class="row">
 
-                        <div class="col-8 p-3"><div class="title"> <h3>{{box.title}}  </h3></div></div>
+                        <div class="col-8 p-3"><div class="title"> <h3 [innerHTML]="box.title"></h3></div></div>
                     @if(isAdmin){
                         <div class="col-1" >
                                 <div class="pen" >  
@@ -364,8 +362,12 @@
                         <button (click)="selectFileColor('bio-blue')">Blue</button>
                     </div>
             }
-      
-    <div class="col-12"> <div class="cv">button </div></div> 
+    <div class="row align-items-center d-flex justify-content-center">
+    <div class="col-1 d-flex justify-content-center"> 
+        <button type="button" class="btn btn-primary " style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="prevProfile()"> Prev</button>
+    </div> 
+    <div class="col-1 d-flex justify-content-center"><button type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="nextProfile()"> Next   </button></div>
+    </div>
 }
 
 <app-footer></app-footer>

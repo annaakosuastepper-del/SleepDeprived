@@ -21,4 +21,4 @@ export const routes: Routes = [
 {path: 'profile/edit/:name/:field/:index', component: ProfileEdit, canActivate: [authGuard]}
 
 
-]
+];

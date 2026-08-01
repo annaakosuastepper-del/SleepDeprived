@@ -1,13 +1,14 @@
 <app-nav></app-nav>
 
-<div class="container-fluid" style="background-color: palevioletred;">
+<div class="container-fluid " style="background-color: #301554; color: #F6C45C">
     
     <div class="row">
         <div class="col-12"> <h1 class = "title">Editing page: {{name}} Section: {{field}} </h1>  </div>
      </div>
 
      <form [formGroup]="form" (ngSubmit)="update()">
-        <div class="row g-3 mt-2 px-3"> 
+        <div class="row g-3 mt-2 px-3 d-flex justify-content-center"> 
+            <div class="col-4">
 
             @if (field == 'bio'){
                 <quill-editor type="text" formControlName="bioControl"></quill-editor>
@@ -16,15 +17,15 @@
                 <quill-editor type="text" formControlName="roleControl"></quill-editor>
             }
             @if (field == 'boxes'){
-                <quill-editor type="text" formControlName="titleControl"></quill-editor>
-                <quill-editor type="text" formControlName="contentControl"></quill-editor>
+                <quill-editor [format]="'html'" formControlName="titleControl"></quill-editor>
+                <quill-editor [format]="'html'" formControlName="contentControl"></quill-editor>
             }
-       
+       </div>
         </div>
-         <div class="row gx-0 mt-5">
-          <button type="submit" class="col-5 btn " style ="background-color: rgb(184, 86, 209);">Aktualisieren</button>
+         <div class="row gx-0 mt-5 d-flex justify-content-center">
+          <button type="submit" class="col-3 btn " style ="background-color: rgb(184, 86, 209);">Aktualisieren</button>
           <div class="col-2"></div>
-          <button type="button" class="col-5 btn " style="background-color: rgb(144, 195, 243);"(click)="cancel()">Abbrechen</button>
+          <button type="button" class="col-3 btn " style="background-color: rgb(144, 195, 243);"(click)="cancel()">Abbrechen</button>
         </div>
      </form>
  

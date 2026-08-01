@@ -4,7 +4,7 @@ import { Footer } from "../footer/footer";
 import { BackendService } from '../shared/backend';
 import { CommonModule } from '@angular/common';
 import { Profile } from '../shared/profile';
-import { RouterLink } from "@angular/router";
+import { RouterLink, Router } from "@angular/router";
 
 
 
@@ -263,14 +263,24 @@ rightPupilX = 0; rightPupilY = 0;
 
   @HostListener('document:mousemove', ['$event'])
 onMouseMove(event: MouseEvent) {
-  const xRatio = (event.clientX / window.innerWidth) * 2 - 1;
-  const yRatio = (event.clientY / window.innerHeight) * 2 - 1;
+  const xRatio = (event.clientX / window.innerWidth) * 2 -1 ;
+  const yRatio = (event.clientY / window.innerHeight) * 2 -1 ;
 
-  const dist = 4;
+  const dist = 8;
   this.leftPupilX  = xRatio * dist;
   this.leftPupilY  = yRatio * dist;
   this.rightPupilX = xRatio * dist;
   this.rightPupilY = yRatio * dist;
+}
+private router = inject(Router);
+
+prevProfile() {
+  this.router.navigate(['/profile/nina']); // needs to be changed to the next profile page when it is created
+}
+
+nextProfile() {
+  this.router.navigate(['/profile/brenda']); // needs to be changed to the next profile page when it is created
+  console.log('Next profile button clicked', this.router.url);
 }
 
 }
