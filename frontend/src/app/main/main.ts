@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Nav } from "../nav/nav";
-import { HostListener } from '@angular/core';
 
 
 @Component({
@@ -15,10 +14,10 @@ export class Main {
   private router = inject(Router);
 
     teamMembers = [
-    { name: 'Hari', image: 'assets/personicon.jpg', route:'/profile/hari' },
-    { name: 'Nina', image: 'assets/personicon.jpg', route:'/profile/nina' },
-    { name: 'Anna', image: 'assets/personicon.jpg', route:'/profile/anna' },
-    { name: 'Brenda', image: 'assets/personicon.jpg', route:'/profile/brenda' }
+    { name: 'Hari', image: '/assets/hariPixel.PNG', route:'/profile/hari' },
+    { name: 'Nina', image: '/assets/ninaPixel.PNG', route:'/profile/nina' },
+    { name: 'Anna', image: '/assets/annaPixel.PNG', route:'/profile/anna' },
+    { name: 'Brenda', image: '/assets/brendaPixel.PNG', route:'/profile/brenda' }
   ];
 
   goToProfile(route: string) {

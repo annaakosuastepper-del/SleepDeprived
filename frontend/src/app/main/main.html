@@ -11,10 +11,10 @@
         </div>
         </div>
         <div class="container my-auto">
-            <div class="row align-items-center justify-content-center  ">
-                <div class="col-md-5 text-center text-md-end">
+            <div class="row align-items-center justify-content-center g-4 ">
+                <div class="col-md-5 text-center text-md-end ps-4">
                     <div class="pe-md-4">
-                        <img src="assets/boardgameLogo.png" class="board ">
+                        <img src="assets/boardgameLogo.png" class="board img-fluid ">
                     </div>
                 </div>
                 
@@ -36,9 +36,7 @@
                     <p class="text-yellow mb-0">Wir sind ein engagiertes 4-köpfiges Entwicklerteam mit einer Leidenschaft für Game Design. Mit klar verteilten Rollen in Programming, 3D-Art, VFX und Game Design verbinden wir technisches Know-how und kreative Ideen, um einzigartige Spiele auf Roblox zu erschaffen.</p>
                    
                 </div>
-                <div>
-                <img src="assets/groupPixel.png" class="group">
-                </div>
+                
             </div>
         </div>
 
@@ -46,12 +44,7 @@
             <div class="row g-3 mt-4 justify-content-center g-4">
                 @for ( member of teamMembers; track member.name){
                 <div class="col-6 col-md-2 text-center" (click)="goToProfile(member.route)" style="cursor: pointer;">
-              <img 
-                        [src]="member.image" 
-                        [alt]="member.name"
-                        class="rounded img-fluid shadow-sm"
-                        style="width: 200px; height: 200px; object-fit: cover; border: 2px solid #000000;"
-                    />
+              <img [src]="member.image" [alt]="member.name"class="img-icon">
                     <p class="text-yellow fw-bold mt-2">{{ member.name }}</p>
             </div>
         }

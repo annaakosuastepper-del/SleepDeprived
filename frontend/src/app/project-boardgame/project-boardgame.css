@@ -12,21 +12,23 @@
 
 
 .whatis{
-    border-radius: 10px;
-    height: 250px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+   
+    height: auto;
+   
+
+   
     color: #F6C45C;
     padding: 10px;
+    transition: transform 0.2s;
 }
 
 .timeline{
     
-    height: 250px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 350px;
+    
     color: #F6C45C;
     border-radius: 10px;
+    transition: transform 0.2s;
 
 }
 
@@ -34,7 +36,13 @@
     height: 300px;
     border-radius: 10px;
     margin-left: 10px;
-    background-color: #db3e8c;
+    
+    color: #F6C45C;
+    transition: transform 0.2s;
+}
+
+.whatis:hover, .timeline:hover, .Minigames:hover {
+  transform: translateY(-5px);
 }
 
 .picMini{
@@ -48,3 +56,36 @@
 .gameplay{
     background-color: pink;
 } 
+
+.star{
+    width: 250px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+img.boardgameLogo {
+  animation: float 3s ease-in-out infinite;
+}
+
+h3 {
+  border-left: 4px solid #F6C45C;
+  padding-left: 10px;
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease;
+}
+
+.slide-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.group{
+    width:500px;
+}

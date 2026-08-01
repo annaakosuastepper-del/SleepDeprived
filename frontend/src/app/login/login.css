@@ -55,3 +55,13 @@
     left: 80%; 
 }
 
+.form-control {
+  background-color: #efce87;
+  color: #3d1a6e;
+  border: 1px solid #F6C45C;
+}
+
+.form-floating label {
+  color: #3d1a6e;
+}
+
