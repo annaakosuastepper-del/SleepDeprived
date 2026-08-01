@@ -277,10 +277,13 @@ rightPupilX = 0; rightPupilY = 0;
 
   @HostListener('document:mousemove', ['$event'])
 onMouseMove(event: MouseEvent) {
+  const width = document.documentElement.clientWidth;
+  const height = document.documentElement.clientHeight;
+  
   const xRatio = (event.clientX / window.innerWidth) * 2 -1 ;
   const yRatio = (event.clientY / window.innerHeight) * 2 -1 ;
 
-  const dist = 8;
+  const dist = 10;
   this.leftPupilX  = xRatio * dist;
   this.leftPupilY  = yRatio * dist;
   this.rightPupilX = xRatio * dist;
@@ -301,9 +304,20 @@ newLinkPlatform = '';
 newLinkUrl = '';
 
 async addLink(platform: string, url: string) {
+   if (!platform || !url) return;
+
+  if (!this.profile()[0].socialLinks) {
+    this.profile()[0].socialLinks = [];
+  }
   this.profile()[0].socialLinks.push({ platform, url });
 
   await this.backendService.update('anna', this.profile()[0]);
+
+  const updated = await this.backendService.getAll();
+  this.profile.set(updated);
+
+  this.newLinkPlatform = '';
+  this.newLinkUrl = '';
   
 }
 

@@ -181,7 +181,7 @@
                     <div class="col-2" >
                         @if(isAdmin){
                          <div class="pen" >  
-                            <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/anna/skills/0"></button> 
+                            <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#socialLinksModal"></button> 
                         </div>
                         <button class="bg-transparent border-0" (click)="showSkillsOptions =! showSkillsOptions" ><img src="assets/Paint.png" class="pen" ></button>  
                     }
@@ -190,7 +190,12 @@
                     
                         <div class="row" >
                             <div class="col-12"> 
-                                <div class="text-box"><span [innerHTML]="profile()[0].skills"></span> </div>
+                                 @for (link of profile()[0].socialLinks; track link) {
+                                    <div class="text-box" >
+                                        <a [href]="link.url" target="_blank" rel="noopener" style="font-size: 1.25rem; color: inherit;"> 
+                                            <i class="fa-brands" [ngClass]="'fa-' + (link.platform ?? '').toLowerCase()"> </i>{{ link.platform }} </a>
+                                            </div>
+                                    }
                             </div>
                         </div>
                       
@@ -203,6 +208,34 @@
                         <button (click)="selectSkillsColor('bio-blue')">Blue</button>
                     </div>
             }
+
+                <div class="modal fade" id="socialLinksModal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="socialLinksModalLabel">Add Social Link</h5>
+                <button type="button" class="close" data-bs-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="platformId" placeholder="GitHub" [(ngModel)]="newLinkPlatform">
+                    <label for="platformId">Platform</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="urlId" placeholder="https://github.com/..." [(ngModel)]="newLinkUrl">
+                    <label for="urlId">URL</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addLink(newLinkPlatform, newLinkUrl)" data-bs-dismiss="modal">Add Link</button>
+            </div>
+        </div>
+    </div>
+</div>
+
         </div>
 
     </div>
