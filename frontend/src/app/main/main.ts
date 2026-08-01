@@ -27,7 +27,11 @@ export class Main {
   goTo(){
     this.router.navigate(['/project-boardgame']);
   }
+imgX = 100; imgY = 10;
 
- 
+img1X = 1500; img1Y = 0;
+
+img2X = 80 ; img2Y = 1000;
+
 
 }

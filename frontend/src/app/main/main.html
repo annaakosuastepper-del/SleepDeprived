@@ -1,14 +1,28 @@
 <app-nav></app-nav>
 
 <div class ="container-fluid" style="background: radial-gradient(ellipse at top, #3d1a6e, rgb(48, 21, 84), #1a0a30); color:#F6C45C">
-            <div class="container text-center mb-5">
-            <img src="assets/sleepLogo.png" class="sleepLogo">
+    <div class="row d-flex justify-content-center py-5">
+       <div class="float-wrapper">
+    <img src="assets/star.png" class="floating-img"
+        [style.transform]="'translate(' + imgX + 'px, ' + imgY + 'px)'">
+</div>
+
+        <div class="col-6 d-flex justify-content-center">
+                <img src="assets/sleepLogo.png" class="sleepLogo">
         </div>
+     <div class="float-wrapper">
+             <img src="assets/star.png" class="floating-img"
+        [style.transform]="'translate(' + img1X + 'px, ' + img1Y + 'px)'">
+    </div>
+   
+    
+    </div>  
 
         <div class="row py-5">
             <div class=" col-12 d-flex justify-content-center">
                  <h2 class="text-yellow ">Projects</h2>
         </div>
+        
         </div>
         <div class="container my-auto">
             <div class="row align-items-center justify-content-center g-4 ">
@@ -22,7 +36,7 @@
                     <div class="ps-md-4">
                         <h4 class="text-yellow "> Currently in Development</h4>
                         <p class="text-yellow fw-light mb-3">Ein dynamisches Roblox-Spieleprojekt, das klassische Brettspiel-Mechaniken mit Minispielen, Sabotage-Items und einem interaktiven Karma-System verbindet.</p>
-                        <a (click)="goTo()" class="btn btn-sm px-4 rounded-pill text-purple" style="background-color: #d4f8c8; ">More info</a>
+                        <a (click)="goTo()" class="btn btn-medium px-4 rounded-pill text-purple" style="background-color: #320049; ">More info</a>
                     </div>
                 </div>
             </div>

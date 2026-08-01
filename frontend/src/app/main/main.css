@@ -3,7 +3,7 @@
 }
 
 .board{
-    background-color: #66a5ed;
+    background-color: #3c0153;
     border-radius: 55px;
 }
 
@@ -11,3 +11,22 @@
     width: 600px;
 }
 
+.star{
+    width: 100px;
+    
+}
+
+.float-wrapper {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.floating-img {
+    display: block;
+    width: 100px;
+    transition: transform 0.1s ease-out; /* smooths the mouse-driven jumps */
+}
