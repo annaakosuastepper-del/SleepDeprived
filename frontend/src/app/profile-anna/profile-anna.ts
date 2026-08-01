@@ -279,7 +279,7 @@ rightPupilX = 0; rightPupilY = 0;
 onMouseMove(event: MouseEvent) {
   const width = document.documentElement.clientWidth;
   const height = document.documentElement.clientHeight;
-  
+
   const xRatio = (event.clientX / window.innerWidth) * 2 -1 ;
   const yRatio = (event.clientY / window.innerHeight) * 2 -1 ;
 
@@ -320,5 +320,5 @@ async addLink(platform: string, url: string) {
   this.newLinkUrl = '';
   
 }
-
+boxToDelete = -1;
 }

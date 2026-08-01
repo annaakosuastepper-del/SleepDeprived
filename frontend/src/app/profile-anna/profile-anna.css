@@ -233,3 +233,9 @@
   background-color: #301554 !important;
   color: #F6C45C;
 }
+
+.contaxct{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}

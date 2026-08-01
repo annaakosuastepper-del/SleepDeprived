@@ -45,12 +45,19 @@ export class BackendService{
   }
   
     async deleteOne(name: String, boxIndex: number): Promise<{message: string}> {
+     
     let response = await fetch(this.apiURL + '/profiles/'+ name + '/boxes/' + boxIndex,{
       method: "DELETE"
     });
+     if (!response.ok) {
+    const text = await response.text();
+    console.error('deleteOne failed:', response.status, text);
+    throw new Error(`Failed to delete box (${response.status})`);
+  }
     let message = await response.json();
     console.log('message in service (deleteOne) : ', message)
     return message;
+
   }
 
   async createBox(name: String, newBox:{title: String, content: String}): Promise<{message: string}> {

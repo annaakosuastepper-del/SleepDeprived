@@ -24,7 +24,7 @@ router.put('/profiles/:name', async(req,res) => {
     const profile = await Profile.findOneAndUpdate(
     {name: req.params.name},
     {$set: updateData},
-    {returnDocument: 'after'} //from the console
+    {returnDocument: 'after', runValidators: true } //from the console
 )
     res.json (profile)
 })
@@ -39,7 +39,7 @@ router.delete('/profiles/:name/boxes/:boxIndex', async(req, res)=> {
     const profile = await Profile.findOne({name: req.params.name})
     console.log('deleting box:', req.params.name, req.params.boxIndex)
     profile.boxes.splice(req.params.boxIndex, 1)
-    await profile.save()
+    await profile.save({ validateModifiedOnly: true })
     res.json(profile)
 })
 
@@ -48,14 +48,14 @@ router.delete('/profiles/:name/boxes/:boxIndex', async(req, res)=> {
 router.post('/profiles/:name/boxes', async(req, res) =>{
     const profile = await Profile.findOne({name: req.params.name})
     profile.boxes.push(req.body)
-    await profile.save()
+    await profile.save({ validateModifiedOnly: true })
     res.json(profile)
 })
 
 router.post('/profiles/:name/files', async(req, res) =>{
     const profile = await Profile.findOne({name: req.params.name})
     profile.files.push(req.body)
-    await profile.save()
+    await profile.save({ validateModifiedOnly: true })
     res.json(profile)
 })
 
