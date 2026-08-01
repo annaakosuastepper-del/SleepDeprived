@@ -264,9 +264,6 @@ export class Login {
     this.img11Y = 0;
   }
 
-
-
-
 }
 
 

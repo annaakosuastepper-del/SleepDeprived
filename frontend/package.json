@@ -18,7 +18,9 @@
     "@angular/platform-browser": "^22.0.0",
     "@angular/router": "^22.0.0",
     "bootstrap": "^5.3.8",
+    "nes.css": "^2.2.1",
     "ngx-quill": "^31.0.1",
+    "pixel-borders": "^2.0.0",
     "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

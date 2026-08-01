@@ -4,7 +4,7 @@
 
 }
 .profile-name{
-
+    
     text-align: center;
     height: px;
     margin: 10px;
@@ -12,13 +12,20 @@
     color: #db3e8c ;
 }
 
-
+.profile-header{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 .profile-pic{
     background-color: #66a5ed;
     text-align: center;
     height: 300px;
     width: 450px;
     margin: 10px;
+        border-radius: 10px;
+
 }
 
 .profile-bio1{
@@ -31,7 +38,7 @@
 }
 
 .bio-pink { 
-    background-color: #db3e8c; 
+    background-color: #db3e8c !important; 
     color: #66a5ed;
     border-radius: 10px;
     text-align: center;
@@ -39,8 +46,8 @@
     height: 400px; 
 }
 .bio-yellow { 
-    background-color: #F6C45C; 
-    color: #775ba3; 
+    background-color: #F6C45C !important; 
+    color: #2c0073; 
     border-radius: 10px;
     text-align: center;
     margin: 10px;
@@ -48,7 +55,7 @@
     
 }
 .bio-green { 
-    background-color: #d4f8c8; 
+    background-color: #d4f8c8 !important; 
     color: #751296; 
     border-radius: 10px;
     text-align: center;
@@ -57,8 +64,8 @@
     
 }
 .bio-blue { 
-    background-color: #66a5ed; 
-    color: #db3e8c; 
+    background-color: #175cac !important; 
+    color: #ca0165; 
     border-radius: 10px;
     text-align: center;
     margin: 10px;
@@ -72,7 +79,6 @@
         border-radius: 10px;
     color: #66a5ed;
     text-align: center;
-    height: 300px;
     margin: 10px;
 }
 
@@ -83,13 +89,7 @@
     padding-left: 100px;
     
 }
-.pixel-me{
-    text-align: center;
-    height: 300px;
-    width: 450px;
-    margin: 10px;
-    
-}
+
 
 .text-box{
     height: auto;
@@ -110,7 +110,7 @@
     text-align: center;
     border-radius: 10px;
     color: #db3e8c;
-    height: 300px;
+    height: 250px;
     margin: 10px;
 }
 
@@ -175,3 +175,56 @@
 }
 
 
+.eye { 
+    position: absolute;
+     width: 25px; 
+     height: 25px;
+   
+    }
+
+.left-eye { 
+    top: 37.5%; 
+    left: 56.25%;
+}
+
+.right-eye { 
+     top: 37.5%; 
+     left: 40.5%;
+}
+
+.pupil { 
+    width: 17px; 
+    height: 20px; 
+    background: rgb(5, 5, 5); 
+    
+}
+
+.pixel-me{
+    text-align: center;
+    width: 450px;
+    position: relative; 
+    display: inline-block;
+     max-width: 100%; 
+    
+}
+
+.pixel-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.pixel-border {
+  border: 3px solid black;
+  box-shadow: 
+    3px 0 0 0 black,
+    0 3px 0 0 black,
+    -3px 0 0 0 black,
+    0 -3px 0 0 black,
+    0 3px 0 0 black;
+  image-rendering: pixelated;
+    border-radius: 0 !important;
+}
+
+.nes-container {
+  border-color: #F6C45C !important;
+}

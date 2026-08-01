@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, HostListener, OnInit, inject, signal } from '@angular/core';
 import { Nav } from "../nav/nav";
 import { Footer } from "../footer/footer";
 import { BackendService } from '../shared/backend';
@@ -11,7 +11,7 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-profile-anna',
-  imports: [Nav, Footer, CommonModule, RouterLink],
+  imports: [Nav, Footer, CommonModule, RouterLink ],
   templateUrl: './profile-anna.html',
   styleUrl: './profile-anna.css',
 })
@@ -258,5 +258,19 @@ async updatePic(){
     this.profile()[0].fileBoxColor = file;
     await this.backendService.update('anna', this.profile()[0]);
   }
+leftPupilX = 0; leftPupilY = 0;
+rightPupilX = 0; rightPupilY = 0;
+
+  @HostListener('document:mousemove', ['$event'])
+onMouseMove(event: MouseEvent) {
+  const xRatio = (event.clientX / window.innerWidth) * 2 - 1;
+  const yRatio = (event.clientY / window.innerHeight) * 2 - 1;
+
+  const dist = 4;
+  this.leftPupilX  = xRatio * dist;
+  this.leftPupilY  = yRatio * dist;
+  this.rightPupilX = xRatio * dist;
+  this.rightPupilY = yRatio * dist;
+}
 
 }

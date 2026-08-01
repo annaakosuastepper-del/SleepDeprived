@@ -10,7 +10,7 @@
                  @if(isAdmin){
               <button class="bg-transparent border-0" (click)="showHeaderOptions = !showHeaderOptions" ><img src="assets/Paint.png" class="pen" ></button> 
                  }
-                <img img [src]="'assets/' + selectedHeader" alt="Anna Akosua Odeibea Stepper" > 
+                <img img [src]="'assets/' + selectedHeader" alt="Anna Akosua Odeibea Stepper" class="profile-header"> 
 
             </div> 
         </div>
@@ -36,7 +36,7 @@
                 </div>
              </div>
             }
-    <div class="row align-items-start">
+    <div class="row g-3 mt-2 px-3 align-items-center">
 
         <div class="col-md-4 d-flex justify-content-center">
 
@@ -45,7 +45,9 @@
           @if(profile()[0].profilePicture){
                     <div class="d-flex justify-content-center"> 
                     <img [src]="'http://localhost:3000/profilePic/' + profile()[0].profilePicture" class="img-fluid"> 
+                    @if(selectedFrame){
                     <img [src]="'assets/' + selectedFrame" class="frame">
+                    }
                 </div>
                 }
           </div>
@@ -85,10 +87,10 @@
             </div> 
             
             <div class="col-md-8">
-
-                <div [class]="selectedBioColor ">
-                    <div class= "row">
-                        <div class="col-10 "><div class="title"> <h3>Bio </h3></div></div>
+                
+                <div  [class]="'nes-container is-rounded ' + selectedBioColor">
+                    <div class= "row ">
+                        <div class=" col-md-8 "><div class="title"> <h3>Bio </h3></div></div>
                         
                             <div class="col-2" >
                                 @if(isAdmin){
@@ -114,11 +116,11 @@
             
     </div>
 
-    <div class="row g-3 mt-2 px-3"> 
+    <div class="row g-3 mt-2 px-3 align-items-center"> 
           
         <div class="col-md-8" >
                     
-            <div [class]="selectedRoleColor" >
+          <div  [class]="'nes-container is-rounded  ' + selectedRoleColor" >
                 <div class="row" >
                     <div class="col-10 "><div class="title"> <h3>Role </h3></div></div>
                         
@@ -150,14 +152,23 @@
         </div>
                     
       
+ <div class="col-md-4">        
+<div class="pixel-wrapper">
         
-
-        <div class="col-md-4"> 
-            <div class="pixel-me"><img src="assets/pixelAnna.png" class="pixel-picture"> </div>
+            <div class="pixel-me" #pixelMe>
+                <img src="assets/annaPixelWhite.png" class="pixel-img" > 
+                <div class="eye left-eye">
+                    <div class="pupil" [style.transform]="'translate(' + leftPupilX + 'px, ' + leftPupilY + 'px)'"></div>
+                </div>
+                <div class="eye right-eye">
+                    <div class="pupil" [style.transform]="'translate(' + rightPupilX + 'px, ' + rightPupilY + 'px)'"></div>
+                </div>
+            
+            </div>
         </div> 
 
     </div>
-
+</div>
     <div class="row g-3 mt-2 px-3">
         <div class="row g-3 mt-2 px-3 col-12"> 
             <div class="d-flex justify-content-between align-items-center">
@@ -183,7 +194,7 @@
                 @for (box of profile()[0].boxes; track box; let i = $index){
                     @if(box.title.toLowerCase().includes(searchTerm) || box.content.toLowerCase().includes(searchTerm)){
                 <div class="col-md-4">
-                    <div [class]="selectedBox" >
+                    <div  [class]="'nes-container is-rounded ' + selectedBox" >
 
                     <div class="row">
 
@@ -232,7 +243,7 @@
          
             <div class="col-md-4" >
  
-                <div [class]="selectedFileColor">  
+                <div  [class]="'nes-container is-rounded ' + selectedFileColor">  
                 <div class="row">
                 <div class="col-8 p-3"> <h3>Files</h3></div>
                     <div class="col-2" >
@@ -297,7 +308,7 @@
                 </div>
                 
 
-        <div class="row g-2 mt-1">
+        <div class="row g-2 mt-1 align-items-center">
                  
                        @if(profile()[0].files.length > 0){
                         @for (file of profile()[0].files; track file){
