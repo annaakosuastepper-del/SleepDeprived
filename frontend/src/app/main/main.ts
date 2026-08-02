@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { Nav } from "../nav/nav";
+import { Footer } from "../footer/footer";
 
 
 @Component({
   selector: 'app-main',
-  imports: [Nav, RouterLink],
+  imports: [Nav, RouterLink, Footer],
   templateUrl: './main.html',
   styleUrl: './main.css',
 })

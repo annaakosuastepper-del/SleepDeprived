@@ -321,4 +321,7 @@ async addLink(platform: string, url: string) {
   
 }
 boxToDelete = -1;
+
+
+
 }

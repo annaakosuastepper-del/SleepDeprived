@@ -29,10 +29,10 @@
              </div>
         <hr class="border-secondary my-5 opacity">
 
-        </div>
+</div>
         <div class="row py-5">
             <div class=" col-12 d-flex justify-content-center">
-                 <h2 class="text-yellow ">Projects</h2>
+                 <h2 class="text-yellow" style="font-weight: bold;">Projects</h2>
         </div>
         
         </div>
@@ -51,6 +51,7 @@
                         <a (click)="goTo()" class="btn btn-medium px-4 rounded-pill text-purple" style="background-color: #320049; ">More info</a>
                     </div>
                 </div>
+               
             </div>
 
         <hr class="border-secondary my-5 opacity">
@@ -58,7 +59,7 @@
 
             <div class="row g-3 mt-4  px-3 justify-content-center text-center py-5 ">
                 <div class="ps-md-4">
-                    <h2 class="section-heading mb-3">About the team</h2>
+                    <h2 class="section-heading mb-3" style="font-weight: bold;">About the team</h2>
                     <p class="text-yellow mb-0">Wir sind ein engagiertes 4-köpfiges Entwicklerteam mit einer Leidenschaft für Game Design. Mit klar verteilten Rollen in Programming, 3D-Art, VFX und Game Design verbinden wir technisches Know-how und kreative Ideen, um einzigartige Spiele auf Roblox zu erschaffen.</p>
                    
                 </div>
@@ -71,12 +72,12 @@
                 @for ( member of teamMembers; track member.name){
                 <div class="col-6 col-md-2 text-center" (click)="goToProfile(member.route)" style="cursor: pointer;">
               <img [src]="member.image" [alt]="member.name"class="img-icon">
-                    <p class="text-yellow fw-bold mt-2">{{ member.name }}</p>
+                    <p class="text-yellow fw-bold mt-2 ">{{ member.name }}</p>
             </div>
         }
             </div>
         </div>
 
-  
+<app-footer></app-footer>
 
 

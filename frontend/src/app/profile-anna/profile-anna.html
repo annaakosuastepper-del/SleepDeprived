@@ -468,7 +468,25 @@
     <div class="col-1 d-flex justify-content-center"><button type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="nextProfile()"> Next   </button></div>
     </div>
 }
+@else {
+    <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center">
+        <div class="col-4 background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
+            <h1 style="font-size: 2rem; font-weight: bold; color: #ebae2c;">Profile not Loading?</h1>
+            <p style="color: #F6C45C;">please report the issue</p>
+             <a href="mailto:annaakosua.stepper@gmail.com"  type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
+             Report Issue   
+            
+            </a>
 
+        </div>
+        
+        <div class="col-4">
+        <img src="assets/error.png" class="error" >
+        </div>
+
+
+    </div>
+}
 <app-footer></app-footer>
 
 

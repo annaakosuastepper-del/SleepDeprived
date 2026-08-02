@@ -24,6 +24,9 @@ isScrolled = false;
 onScroll() {
   this.isScrolled = window.scrollY > 0;
 }
-
+logout() {
+  localStorage.clear();
+  this.router.navigate(['/']);
+}
   
 }
