@@ -261,3 +261,7 @@ overflow-wrap: break-word;
     height: 100px;
     object-fit: contain;
 }
+
+.error{
+    width: 500px;
+}

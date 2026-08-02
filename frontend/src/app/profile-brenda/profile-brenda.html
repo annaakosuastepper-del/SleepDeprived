@@ -466,4 +466,23 @@
     </div>
 }
 
+@else {
+    <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center" style="background-color: #301554; color:#F6C45C;  border-radius: 10px; padding: 20px;">
+        <div class="col-4 background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
+            <h2>Something went wrong loading the profile.</h2>
+    <p>Please report this issue:</p>
+    <input [(ngModel)]="reportName" placeholder="Your name" class="form-control mb-2" style="max-width: 400px;">
+    <input [(ngModel)]="reportEmail" placeholder="Your email" class="form-control mb-2" style="max-width: 400px;">
+    <textarea [(ngModel)]="reportMessage" placeholder="Describe the issue" class="form-control mb-2" style="max-width: 400px;"></textarea>
+    <button class="btn" style="background-color: #F6C45C; color:#3d1a6e" (click)="sendReport()">Send Report</button>
+        </div>
+        
+        <div class="col-4">
+        <img src="assets/error.png" class="error" >
+        </div>
+
+
+    </div>
+}
+
 <app-footer></app-footer>

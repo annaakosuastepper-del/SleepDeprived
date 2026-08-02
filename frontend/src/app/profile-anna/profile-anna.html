@@ -2,7 +2,7 @@
 
 <div class="container-fluid" style="background: radial-gradient(ellipse at top, #3d1a6e, #301554, #1a0a30);">
     
-    @if(profile().length > 0){ 
+    @if(profile().length < 0){ 
         
     <div class="row">
         <div class="col-12">
@@ -469,15 +469,14 @@
     </div>
 }
 @else {
-    <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center">
+    <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center" style="background-color: #301554; color:#F6C45C;  border-radius: 10px; padding: 20px;">
         <div class="col-4 background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
-            <h1 style="font-size: 2rem; font-weight: bold; color: #ebae2c;">Profile not Loading?</h1>
-            <p style="color: #F6C45C;">please report the issue</p>
-             <a href="mailto:annaakosua.stepper@gmail.com"  type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
-             Report Issue   
-            
-            </a>
-
+            <h2>Something went wrong loading the profile.</h2>
+    <p>Please report this issue:</p>
+    <input [(ngModel)]="reportName" placeholder="Your name" class="form-control mb-2" style="max-width: 400px;">
+    <input [(ngModel)]="reportEmail" placeholder="Your email" class="form-control mb-2" style="max-width: 400px;">
+    <textarea [(ngModel)]="reportMessage" placeholder="Describe the issue" class="form-control mb-2" style="max-width: 400px;"></textarea>
+    <button class="btn" style="background-color: #F6C45C; color:#3d1a6e" (click)="sendReport()">Send Report</button>
         </div>
         
         <div class="col-4">

@@ -57,6 +57,27 @@ router.post('/profiles/:name/files', async(req, res) =>{
     res.json(profile)
 })
 
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'annaakosua.stepper@gmail.com',
+    pass: 'ENTER APP PASSSWORD HERE'
+  }
+});
+
+router.post('/report', async (req, res) => {
+  const { name, email, message } = req.body;
+  await transporter.sendMail({
+    from: email,
+    to: 'annaakosua.stepper@gmail.com',
+    subject: `Issue Report from ${name}`,
+    text: message
+  });
+  res.json({ success: true });
+});
+
 
 
 module.exports = router

@@ -293,4 +293,16 @@ export class ProfileNina implements OnInit {
   }
 
   boxToDelete = -1;
+
+  reportName = '';
+reportEmail = '';
+reportMessage = '';
+
+async sendReport() {
+  await fetch('http://localhost:3000/report', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: this.reportName, email: this.reportEmail, message: this.reportMessage })
+  });
+}
 }
