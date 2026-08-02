@@ -34,42 +34,45 @@
     border-radius: 10px;
     text-align: center;
     margin: 10px;
-    height: 300px;
+    min-height: 300px;
 }
 
 .bio-pink { 
     background-color: #b71d6a !important; 
     color: #0453ad;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
+    padding: 1rem;
     margin: 10px;
-    height: 400px; 
+    min-height: 400px; 
 }
 .bio-yellow { 
     background-color: #F6C45C !important; 
     color: #2c0073; 
     border-radius: 10px;
-    text-align: center;
-    margin: 10px;
-    height: 400px;
+    text-align: left;
+    padding: 1rem;
+    min-height: 400px;
     
 }
 .bio-green { 
     background-color: #d4f8c8 !important; 
     color: #751296; 
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
+    padding: 1rem;
     margin: 10px;
-    height: 400px;
+    min-height: 400px;
     
 }
 .bio-blue { 
     background-color: #175cac !important; 
     color: #ca0165; 
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
+    padding: 1rem;
     margin: 10px;
-    height: 400px;
+    min-height: 400px;
     
 }
 
@@ -82,23 +85,34 @@
     margin: 10px;
 }
 
+.text-box{
+    height: auto;
+    width: auto;
+    margin-left: 5%;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
 .title{
     height: 50px;
     text-align: center;
     padding-top: 10px;
-    padding-left: 100px;
-    
+    padding-bottom: 8px;
+    border-bottom: 2px solid #070707;
+    margin-bottom: 8px;
 }
 
 
-.text-box{
-    height: auto;
-    width: 75%;
-    margin-left: 5%;
-    margin-top: 10px;
+
+.title h3 {
+    text-align: center !important;
+    font-weight: bold !important;
+    margin: 0;
 }
 
-
+.title h3 * {
+    text-align: inherit !important;
+    font-weight: inherit !important;
+}
 .cv{
     width: 450px;
     margin: 20px;
@@ -110,7 +124,7 @@
     text-align: center;
     border-radius: 10px;
     color: #db3e8c;
-    height: 250px;
+    height: auto;
     margin: 10px;
 }
 
