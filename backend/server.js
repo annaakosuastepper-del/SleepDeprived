@@ -19,6 +19,7 @@ const storage = multer.diskStorage({
         }
     }
     });
+    
 const picStorage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'profilePic/');

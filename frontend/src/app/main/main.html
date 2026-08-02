@@ -1,23 +1,35 @@
 <app-nav></app-nav>
 
 <div class ="container-fluid" style="background: radial-gradient(ellipse at top, #3d1a6e, rgb(48, 21, 84), #1a0a30); color:#F6C45C">
-    <div class="row d-flex justify-content-center py-5">
-       <div class="float-wrapper">
-    <img src="assets/star.png" class="floating-img"
-        [style.transform]="'translate(' + imgX + 'px, ' + imgY + 'px)'">
-</div>
+    
+    
+    <div class="row d-flex align-items-center justify-content-center position-relative">
+
+        <div class="float-wrapper">
+            <img src="assets/star.png" class="floating-img"
+            [style.transform]="'translate(' + imgX + 'px, ' + imgY + 'px)'">
+        </div>
 
         <div class="col-6 d-flex justify-content-center">
                 <img src="assets/sleepLogo.png" class="sleepLogo">
         </div>
-     <div class="float-wrapper">
-             <img src="assets/star.png" class="floating-img"
-        [style.transform]="'translate(' + img1X + 'px, ' + img1Y + 'px)'">
-    </div>
-   
-    
-    </div>  
 
+        <div class="float-wrapper">
+                <img src="assets/star.png" class="floating-img"
+            [style.transform]="'translate(' + img1X + 'px, ' + img1Y + 'px)'">
+        </div>  
+  
+            <div class="col-12 d-flex justify-content-center ">
+                <p class="text-box fw-bold">Warum „Sleep Deprived“?</p>
+                </div>
+                <div class="col-6 d-flex justify-content-center ">
+                   <p class="text-box"> Ganz ehrlich: Als Studierende gehört Schlafmangel für uns einfach zum Alltag. 
+                    Aber anstatt die langen Nächte nur abzusitzen, nutzen wir sie, um gemeinsam unsere Leidenschaft zu verwirklichen und eigene Spiele zu entwickeln. 
+                    Wir sind Sleep Deprived,vier Studierende, viel Kaffee und ein gemeinsames Ziel!</p>
+             </div>
+        <hr class="border-secondary my-5 opacity">
+
+        </div>
         <div class="row py-5">
             <div class=" col-12 d-flex justify-content-center">
                  <h2 class="text-yellow ">Projects</h2>
@@ -64,5 +76,7 @@
         }
             </div>
         </div>
-</div>
+
+  
+
 

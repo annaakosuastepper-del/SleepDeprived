@@ -97,6 +97,8 @@ export class ProfileEdit implements OnInit{
     cancel(){
       this.router.navigate(['profile/'+this.name]);
     }
+    img1X = 0; img1Y = 0;
+        img2X = 1200; img2Y = 0;
 
   
   }

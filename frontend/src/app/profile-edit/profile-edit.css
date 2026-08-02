@@ -22,3 +22,29 @@ textarea {
     margin-left: 200px ;
     background-color: white;
 }
+
+.float-wrapper {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.floating-img {
+    display: block;
+    width: 100px;
+    transition: transform 0.1s ease-out; /* smooths the mouse-driven jumps */
+}
+
+::ng-deep .ql-snow .ql-stroke {
+    stroke: #F6C45C !important;
+}
+::ng-deep .ql-snow .ql-fill {
+    fill: #F6C45C !important;
+}
+::ng-deep .ql-snow .ql-picker-label,
+::ng-deep .ql-snow .ql-picker-item {
+    color: #F6C45C !important;
+}

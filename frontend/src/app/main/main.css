@@ -30,3 +30,16 @@
     width: 100px;
     transition: transform 0.1s ease-out; /* smooths the mouse-driven jumps */
 }
+
+.text-box{
+    height: auto;
+    width: auto;
+    margin-left: 5%;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.hero-section {
+    min-height: 100vh;
+    width: 100%;
+}
