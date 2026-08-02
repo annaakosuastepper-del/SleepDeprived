@@ -2,7 +2,7 @@
 
 <div class="container-fluid" style="background: radial-gradient(ellipse at top, #3d1a6e, #301554, #1a0a30);">
     
-    @if(profile().length < 0){ 
+    @if(profile().length > 0){ 
         
     <div class="row">
         <div class="col-12">
@@ -275,7 +275,13 @@
 
                     <div class="row">
 
-                        <div class="col-8 p-3"><div class="title"> <h3 [innerHTML]="box.title"></h3></div></div>
+                        <div class="col-8 ">
+                            <div class="title-container"> 
+                                <img src="assets/titleBox.png" class="img-fluid" >
+                                <h3 [innerHTML]="box.title"></h3>
+                            </div>
+                        </div>
+
                     @if(isAdmin){
                         <div class="col-1" >
                                 <div class="pen" >  

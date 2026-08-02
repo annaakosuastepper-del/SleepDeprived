@@ -257,3 +257,24 @@
 .error{
     width: 500px;
 }
+
+.title-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.title-container h3 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    margin: -20px;
+    text-align: center;
+    width: 100%;
+}
+.title-container img {
+margin-top: -10px;
+    width: 100%;
+    display: block;
+}

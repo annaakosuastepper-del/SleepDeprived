@@ -271,9 +271,15 @@
                     <div  [class]="'nes-container is-rounded ' + selectedBox" >
 
                     <div class="row">
+                        
+                    <div class="col-8 ">
+                            <div class="title-container"> 
+                                <img src="assets/titleBox.png" class="img-fluid" >
+                                <h3 [innerHTML]="box.title"></h3>
+                            </div>
+                        </div>
 
-                        <div class="col-8 p-3"><div class="title"> <h3 [innerHTML]="box.title"></h3></div></div>
-                    @if(isAdmin){
+                        @if(isAdmin){
                         <div class="col-1" >
                                 <div class="pen" >
                                     <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" [routerLink]="['/profile/edit','brenda','boxes',i]"></button>
