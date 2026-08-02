@@ -49,7 +49,7 @@
    
         <div class="col-12 ">
       <div class="form-floating mb-3" >
-        <input type="text" class="form-control" id="firstNameId" placeholder="WeLovePommes" [(ngModel)]="username" >
+        <input type="text" class="form-control" id="firstNameId" placeholder="WeLovePommes" [(ngModel)]="username" style="background-color: #F6C45C; color: #1a0a30;">
         <label for="firstNameId">Username</label>
       </div>
     </div>
@@ -57,7 +57,7 @@
 
     <div class="col-12">
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="passwordId" placeholder="AnnaIsAwesome" [(ngModel)]="password">
+        <input type="password" class="form-control" id="passwordId" placeholder="AnnaIsAwesome" [(ngModel)]="password" style="background-color: #F6C45C; color: #1a0a30; ">
         <label for="passwordId">Password</label>
       </div>
     </div>
@@ -66,9 +66,8 @@
       <p class="text-danger">{{errorMessage}}</p>
     }
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end" mt-2>
-      <button type="button" class="btn btn-secondary me-md-2 " (click)="goBack()">Abbrechen</button>
-      <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+    <div class="d-grid gap-2 d-md-flex justify-content-center" mt-2>
+      <button type="button" class="btn btn-primary" (click)="login()" style="background-color: #4e1b96; color: #F6C45C;">Login</button>
     </div>
  
       </div>

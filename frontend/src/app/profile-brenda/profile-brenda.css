@@ -102,7 +102,6 @@ overflow-wrap: break-word;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #070707;
     margin-bottom: 8px;
 }
 
@@ -111,6 +110,8 @@ overflow-wrap: break-word;
 .title h3 {
     text-align: center !important;
     font-weight: bold !important;
+        border-bottom: 2px solid #070707;
+
     margin: 0;
 }
 
