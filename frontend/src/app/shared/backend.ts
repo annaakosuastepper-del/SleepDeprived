@@ -60,6 +60,9 @@ export class BackendService{
 
   }
 
+      
+
+
   async createBox(name: String, newBox:{title: String, content: String}): Promise<{message: string}> {
         console.log('createBox called!', name, newBox);
     let response = await fetch(this.apiURL + '/profiles/'+ name + '/boxes' ,{

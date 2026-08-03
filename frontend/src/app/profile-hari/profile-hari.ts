@@ -306,4 +306,28 @@ async sendReport() {
     body: JSON.stringify({ name: this.reportName, email: this.reportEmail, message: this.reportMessage })
   });
 }
+async DeleteSocial(link: { platform: string; url: string }) {
+
+    await fetch(`http://localhost:3000/api/uploads/${link.platform}`, {
+      method: 'DELETE',
+     
+    })
+
+    const fileIndex = this.profile()[0].socialLinks.indexOf(link);
+    if(fileIndex !== -1){
+        this.profile()[0].socialLinks.splice(fileIndex, 1);
+        await this.backendService.update('anna', this.profile()[0]);
+        const data = await this.backendService.getAll();
+        this.profile.set(data);
+    }
+    
+    for(let i = 0; i < this.selectedFiles.length; i++){
+        if(this.selectedFiles[i].name === link){
+            this.selectedFiles.splice(i, 1);
+            break;
+        }
+      }
+      
+
+}
 }

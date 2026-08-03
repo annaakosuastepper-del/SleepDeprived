@@ -189,6 +189,59 @@
                          <div class="pen" >  
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#socialLinksModal"></button> 
                         </div>
+                    
+                    @if(isAdmin){
+                        <div class="trash" >  
+                              <button class="bg-transparent border-0"><img src="assets/trash.png" class="trash" data-bs-toggle="modal" data-bs-target="#deleteSocialModal"></button> 
+                                               
+                        </div>
+                        <div class="modal fade" id="deleteSocialModal" tabindex="-1">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="deleteSocialModalLabel">Delete Social Links</h5>
+                                            <button type="button" class="close" data-bs-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="modal-body">
+                                                    @for(link of profile()[0].socialLinks; track link){
+                                                        <p>{{link.platform}}  
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmDeleteSocialModal">  Delete 
+                                                        </button>
+                                                        </p>
+                                                    }                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                         
+                         <div class="modal fade" id="confirmDeleteSocialModal" tabindex="-1" role="dialog" >
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmDeleteSocialModalLabel">Are you sure you want to delete this Link</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                      @for(link of profile()[0].socialLinks; track link){
+                                                       
+                                                   <p>{{link.platform}} </p>
+                                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                                     <button type="button" class="btn btn-primary"(click)="DeleteSocial(link)" data-bs-dismiss="modal"> Yes </button>
+                                                      }
+                                                </div>
+                                               
+                                                </div>
+                                            
+                                            </div>
+                                            </div>
+                    }
+
                         <button class="bg-transparent border-0" (click)="showSocialColorOptions =! showSocialColorOptions" ><img src="assets/Paint.png" class="pen" ></button>  
                     }
                     </div>
