@@ -12,6 +12,7 @@ A MEAN stack portfolio website built as part of a university project at HTW Berl
 - **Styling:** Bootstrap, NES.css (pixel borders)
 - **Rich Text Editor:** Quill
 - **Icons:** Font Awesome
+- - **Email:** Nodemailer (Gmail)
 
 ---
 
@@ -113,6 +114,7 @@ The following code sections were generated or assisted by AI tools:
 | `::ng-deep` Quill editor colour overrides | Claude |
 | File download method | VS Code AI |
 | Main page template for items | Gemini |
+| Nodemailer email report setup | Claude |
 
 ---
 
@@ -138,6 +140,9 @@ Project Page
 Edit Mode
 <img width="1902" height="906" alt="image" src="https://github.com/user-attachments/assets/3d161d76-e9ce-4cac-9cc8-38868db311a0" />
 
+Error Page
+<img width="1900" height="897" alt="image" src="https://github.com/user-attachments/assets/996026e2-f5cd-44bd-8e74-a927d1c540f4" />
+
 ---
 
 ## Sources & References
@@ -152,3 +157,4 @@ Edit Mode
 - [Footer Tutorial](https://www.youtube.com/watch?v=UEfFpk4sSxE)
 - [MDBootstrap Footer](https://mdbootstrap.com/docs/standard/navigation/footer/)
 - [Website Inspiration](https://pixelsplit.games/)
+-[Nodemailer](https://www.youtube.com/watch?v=fF-07yFTq5o)
