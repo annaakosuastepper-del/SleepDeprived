@@ -1,4 +1,4 @@
- .navbar.transparent.navbar-inverse .navbar-inner {
+ .navbar.transparent.navbar-inverse .navbar-inner .navbar-toggler{
     border-width: 0px;
     -webkit-box-shadow: 0px 0px;
     box-shadow: 0px 0px;
@@ -8,3 +8,12 @@
     background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
     
 }
+
+.navbar-toggler {
+    border-color: #F6C45C;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23F6C45C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
