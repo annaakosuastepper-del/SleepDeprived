@@ -14,7 +14,8 @@
 
 .profile-header{
     width: 100%;
-    height: 200px;
+    height: auto;
+    max-height: 200px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -23,8 +24,9 @@
     text-align: center;
     height: 300px;
     width: 450px;
-    margin: 10px;
-        border-radius: 10px;
+    aspect-ratio: 4 / 3;
+    margin: 10px auto;
+    border-radius: 10px;
 
 }
 
@@ -99,14 +101,26 @@
     padding-bottom: 8px;
     margin-bottom: 8px;
 }
+    @media (max-width: 576px) {
+    .title {
+        padding-left: 20px;
+    }
+    }
 
 
 
 .title h3 {
-    text-align: center !important;
-    font-weight: bold !important;
-      border-bottom: 2px solid #070707;
+     position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    text-align: center;
+    font-size: clamp(0.85rem, 2vw, 1.5rem);
+    line-height: 1.1;
     margin: 0;
+    overflow-wrap: break-word;
+
 }
 
 .title h3 * {
@@ -114,8 +128,9 @@
     font-weight: inherit !important;
 }
 .cv{
-    width: 450px;
-    margin: 20px;
+    max-width: 450px;
+    width: 100%;
+    margin: 20px auto;
 }
 
 
@@ -157,7 +172,8 @@
 }
 
 .plus{
-    width: 200px;
+    max-width: 200px;
+    width: 100%;
 }
 
 .plus-files{
@@ -172,6 +188,8 @@
     position: relative;
     width: 400px;
     height: 400px;
+    aspect-ratio: 1 / 1; 
+
 }
 
 .profile-pic-container img.picture {
@@ -215,10 +233,10 @@
 
 .pixel-me{
     text-align: center;
-    width: 450px;
+    max-width: 450px;
     position: relative; 
     display: inline-block;
-     max-width: 100%; 
+    width: 100%; 
     
 }
 

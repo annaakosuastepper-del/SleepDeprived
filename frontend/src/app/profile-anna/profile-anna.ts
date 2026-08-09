@@ -148,7 +148,7 @@ async DeleteSocial(link: { platform: string; url: string }) {
     await fetch(`http://localhost:3000/api/uploads/${link.platform}`, {
       method: 'DELETE',
      
-    })
+    }) 
 
     const fileIndex = this.profile()[0].socialLinks.indexOf(link);
     if(fileIndex !== -1){
@@ -176,8 +176,7 @@ async openFile(fileName: string) {
 
 }
 
-picturelink ="";
-
+                         
 async uploadPic() {
   const fromData = new FormData();
 
