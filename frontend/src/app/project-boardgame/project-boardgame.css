@@ -9,6 +9,17 @@
     width: 100%;
 }
 
+.img-icon {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.whatis, .timeline, .Minigames {
+    padding: 1.25rem;
+}
 
 
 .whatis{
@@ -20,9 +31,8 @@
 }
 
 .timeline{
-    
-    height: 350px;
-    
+    min-height: 350px;
+    height: auto;
     color: #F6C45C;
     border-radius: 10px;
     transition: transform 0.2s;
@@ -30,12 +40,22 @@
 }
 
 .Minigames{
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     border-radius: 10px;
     margin-left: 10px;
-    
     color: #F6C45C;
     transition: transform 0.2s;
+}
+
+.whatis h3, .timeline h3, .Minigames h3 {
+    font-size: clamp(1.25rem, 2.5vw, 1.85rem);
+}
+
+.whatis p, .timeline p, .Minigames p,
+.timeline li, .Minigames li {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.6;
 }
 
 .whatis:hover, .timeline:hover, .Minigames:hover {
@@ -84,7 +104,8 @@ h3 {
 }
 
 .group{
-    width:500px;
+    width:100%;
+    max-width: 500px;
 }
 
 .remote{

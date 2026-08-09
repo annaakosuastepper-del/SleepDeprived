@@ -22,6 +22,11 @@
     animation: float 4s ease-in-out infinite;
 }
 
+@media (max-width: 480px) {
+    .float-wrapper {
+        display: none;
+    }
+}
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-15px) rotate(5deg); }
@@ -48,5 +53,8 @@
 
 .img-icon {
     display: block;
+    width: 100px;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
 }
