@@ -3,7 +3,7 @@
 <div class="container-fluid " style="background-color: #301554; color: #F6C45C">
     
     <div class="row">
-        <div class="col-12"> <h1 class = "title">Editing Page: {{name}} Section: {{field}} </h1>  </div>
+        <div class="col-12"> <h1 class="title" style="font-size: clamp(1.25rem, 4vw, 2.5rem);">Editing Page: {{name}} Section: {{field}} </h1>  </div>
      </div>
 
      <form [formGroup]="form" (ngSubmit)="update()">
@@ -13,7 +13,7 @@
             [style.transform]="'translate(' + img1X + 'px, ' + img1Y + 'px)'">
         </div>  
   
-            <div class="col-6">
+            <div class="col-12 col-md-8 col-lg-6">
 
             @if (field == 'bio'){
                 <quill-editor type="text" formControlName="bioControl"></quill-editor>
@@ -34,13 +34,12 @@
             [style.transform]="'translate(' + img2X + 'px, ' + img2Y + 'px)'">
         </div>  
         </div>
-         <div class="row gx-0 mt-5 d-flex justify-content-center">
-             <button type="button" class="col-3 btn " style="background-color: rgb(144, 195, 243);"(click)="cancel()">Abbrechen</button>
-          <div class="col-2"></div>
-             <button type="submit" class="col-3 btn " style ="background-color: rgb(184, 86, 209);">Aktualisieren</button>
+         <div class="row gx-0 mt-5 pb-4 d-flex justify-content-center gap-3">
+             <button type="button" class="col-5 col-md-3 btn " style="background-color: rgb(144, 195, 243);"(click)="cancel()">Abbrechen</button>
+             <button type="submit" class="col-5 col-md-3 btn " style ="background-color: rgb(184, 86, 209);">Aktualisieren</button>
           
          
         </div>
      </form>
  
-</div>
+</div>

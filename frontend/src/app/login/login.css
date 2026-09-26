@@ -1,5 +1,5 @@
 .floating-img {
-  width: 100px;
+  width: clamp(40px, 8vw, 100px);
   position: absolute;
   z-index: 0;
   pointer-events: none;
@@ -71,3 +71,14 @@
   color: #3d1a6e;
 }
 
+
+/* fewer stars on phones so they don't crowd the form */
+@media (max-width: 576px) {
+  .floating-img-2,
+  .floating-img-4,
+  .floating-img-6,
+  .floating-img-8,
+  .floating-img-10 {
+    display: none;
+  }
+}

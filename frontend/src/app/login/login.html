@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center vh-100 bg-light" style="background: radial-gradient(ellipse at top, #3d1a6e, rgb(48, 21, 84), #1a0a30); color:#F6C45C">
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light position-relative overflow-hidden" style="background: radial-gradient(ellipse at top, #3d1a6e, rgb(48, 21, 84), #1a0a30); color:#F6C45C">
 
   <img src="assets/star.png" class="floating-img floating-img-1"
      [style.transform]="'translate(' + img1X  + 'px, ' + img1Y  + 'px)'">
@@ -39,7 +39,7 @@
   <div class="container" style="max-width: 450px; ">
 
   <div class="text-center mb-4">
-  <img src ="assets/sleepLogo.png">
+  <img src="assets/sleepLogo.png" class="img-fluid" alt="Sleep Deprived Logo">
   <div class="row g-3 mt-3">
   </div>
 
@@ -66,7 +66,7 @@
       <p class="text-danger">{{errorMessage}}</p>
     }
 
-    <div class="d-grid gap-2 d-md-flex justify-content-center" mt-2>
+    <div class="d-grid gap-2 d-md-flex justify-content-center mt-2">
       <button type="button" class="btn btn-primary" (click)="login()" style="background-color: #4e1b96; color: #F6C45C;">Login</button>
     </div>
  
@@ -76,4 +76,4 @@
 
 
  
-</div>
+</div>

@@ -30,12 +30,12 @@
     <div class="row g-3 mt-2 px-3 align-items-center">
         <div class="col-md-12 d-flex justify-content-center">
            
-            <h1 style="font-size: 2rem; font-weight: bold; color: #ebae2c;">Game Designerin & Produkt-Managerin</h1>
+            <h1 style="font-size: clamp(1.25rem, 4vw, 2rem); font-weight: bold; color: #ebae2c;">Game Designerin & Produkt-Managerin</h1>
         </div>
     </div>
       @if(isAdmin){
             <div class="row">
-                <div class="pen col-md- 4" >
+                <div class="pen col-auto">
                     <button class="bg-transparent border-0" ><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#updateProfilePicModal" ></button>
                 </div>
              </div>
@@ -57,9 +57,9 @@
           </div>
                   @if(showFrameOptions){
                     <div class="row">
-                 <button (click)="selectFrame('flowerFrame.png')"><img src="assets/flowerFrame.png" class="profile-pic-container img.frame"></button>
-                 <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="profile-pic-container img.frame"></button>
-                 <button (click)="selectFrame('fruitFrame.png')"><img src="assets/fruitFrame.png" class="profile-pic-container img.frame"></button>
+                 <button (click)="selectFrame('flowerFrame.png')"><img src="assets/flowerFrame.png" class="frame-option"></button>
+                 <button (click)="selectFrame('candyFrame.png')"><img src="assets/candyFrame.png" class="frame-option"></button>
+                 <button (click)="selectFrame('fruitFrame.png')"><img src="assets/fruitFrame.png" class="frame-option"></button>
                  <button (click)="selectFrame('')"> None </button>
                     </div>
                 }
@@ -94,9 +94,9 @@
 
                 <div  [class]="'nes-container is-rounded ' + selectedBioColor">
                     <div class= "row ">
-                        <div class=" col-md-8 "><div class="title"> <h2 style="font-size: 2.5rem; font-weight: bold; ">Über mich </h2></div></div>
+                        <div class="col"><div class="title"> <h2 style="font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: bold; ">Über mich </h2></div></div>
 
-                            <div class="col-2" >
+                            <div class="col-auto">
                                 @if(isAdmin){
                                 <div class="pen" >
                                    <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/brenda/bio/0"></button>
@@ -125,9 +125,9 @@
 
           <div  [class]="'nes-container is-rounded  ' + selectedSkillsColor" >
                 <div class="row" >
-                    <div class="col-10 "><div class="title"> <h2 style="font-size: 2.5rem; font-weight: bold; "> Skills </h2></div></div>
+                    <div class="col"><div class="title"> <h2 style="font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: bold; "> Skills </h2></div></div>
 
-                    <div class="col-2" >
+                    <div class="col-auto">
                         @if(isAdmin){
                          <div class="pen" >
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" routerLink="/profile/edit/brenda/role/0"></button>
@@ -181,9 +181,9 @@
 
           <div  [class]="'nes-container is-rounded  ' + selectedSocialColor" >
                 <div class="row" >
-                    <div class="col-10 "><div class="title"> <h2 style="font-size: 2.5rem; font-weight: bold; "> Social Links </h2></div></div>
+                    <div class="col"><div class="title"> <h2 style="font-size: clamp(1.5rem, 5vw, 2.5rem); font-weight: bold; "> Social Links </h2></div></div>
 
-                    <div class="col-2" >
+                    <div class="col-auto">
                         @if(isAdmin){
                          <div class="pen" >
                             <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" data-bs-toggle="modal" data-bs-target="#socialLinksModal"></button>
@@ -296,11 +296,11 @@
     </div>
 
     <div class="row g-3 mt-2 px-3">
-        <div class="row g-3 mt-2 px-3 col-12">
-            <div class="d-flex justify-content-between align-items-center">
+        <div class="col-12">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
                  <img img [src]="'assets/' + selectedCv" alt="Lebenslauf" class="cv" >
 
-                <input type="text" placeholder="Search..." (input)="search($event)" class="search-wrapper" class="col-4 "/>
+                <input type="text" placeholder="Search..." (input)="search($event)" class="search-wrapper form-control col-12 col-md-4"/>
 
                 @if(isAdmin){
                     <button class="bg-transparent border-0" (click)="showCvOptions = !showCvOptions" ><img src="assets/Paint.png" class="pen" ></button>
@@ -324,7 +324,7 @@
 
                     <div class="row">
                         
-                    <div class="col-8 ">
+                    <div class="col">
                             <div class="title-container"> 
                                 <img src="assets/titleBox.png" class="img-fluid" >
                                 <h3 [innerHTML]="box.title"></h3>
@@ -332,7 +332,7 @@
                         </div>
 
                         @if(isAdmin){
-                        <div class="col-1" >
+                        <div class="col-auto">
                                 <div class="pen" >
                                     <button class="bg-transparent border-0"><img src="assets/pen.png" class="pen" [routerLink]="['/profile/edit','brenda','boxes',i]"></button>
                                 </div>
@@ -340,7 +340,7 @@
                      }
 
                     @if(isAdmin){
-                        <div class="col-1" >
+                        <div class="col-auto">
                                 <div class="trash" >
                                      <button class="bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#confirmDeleteBoxModal" (click)="boxToDelete = i"><img src="assets/trash.png" class="trash" ></button>
                                 </div>
@@ -367,7 +367,7 @@
                  }
 
                   @if(isAdmin){
-                    <div class="col-2" >
+                    <div class="col-auto">
                     <button class="bg-transparent border-0" (click)="showBoxOptions = !showBoxOptions" ><img src="assets/Paint.png" class="pen" ></button>
                     </div>
                 }
@@ -397,8 +397,8 @@
 
                 <div  [class]="'nes-container is-rounded ' + selectedFileColor">
                 <div class="row">
-                <div class="col-8 p-3"> <h3>Files</h3></div>
-                    <div class="col-2" >
+                <div class="col p-3"> <h3>Files</h3></div>
+                    <div class="col-auto">
                          @if(isAdmin){
                                 <div class="trash" >
                                     <button class="bg-transparent border-0"><img src="assets/trash.png" class="trash" data-bs-toggle="modal" data-bs-target="#deleteModal"></button>
@@ -453,7 +453,7 @@
                     <input type="file" id="fileInput" style="display:none" multiple (change)="onFileSelect($event)" />
                 </div>
                  @if(isAdmin){
-                    <div class="col-2" >
+                    <div class="col-auto">
                     <button class="bg-transparent border-0" (click)="showFileOptions = !showFileOptions" ><img src="assets/Paint.png" class="pen" ></button>
                     </div>
                 }
@@ -464,7 +464,7 @@
 
                        @if(profile()[0].files.length > 0){
                         @for (file of profile()[0].files; track file){
-                         <div class="col-2 p-3">
+                         <div class="col-4 p-2 text-center">
                             <button class="bg-transparent border-0" (click)="openFile(file)"> <img src="assets/file.png" class="folder"> </button>
                                 <div class ="textSize" > {{file}} </div>
                         </div>
@@ -517,16 +517,16 @@
                     </div>
             }
     <div class="row align-items-center d-flex justify-content-center">
-    <div class="col-1 d-flex justify-content-center">
+    <div class="col-auto d-flex justify-content-center">
         <button type="button" class="btn btn-primary " style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="prevProfile()"> Prev</button>
     </div>
-    <div class="col-1 d-flex justify-content-center"><button type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="nextProfile()"> Next   </button></div>
+    <div class="col-auto d-flex justify-content-center"><button type="button" class="btn btn-primary" style="background-color: #F6C45C; border-color: #301554; color:#3d1a6e" (click)="nextProfile()"> Next   </button></div>
     </div>
 }
 
 @else {
     <div class="row g-3 mt-2 px-3 align-items-center d-flex justify-content-center" style="background-color: #301554; color:#F6C45C;  border-radius: 10px; padding: 20px;">
-        <div class="col-4 background-color: #F6C45C; border-color: #301554; color:#3d1a6e">
+        <div class="col-12 col-md-5">
             <h2>Something went wrong loading the profile.</h2>
     <p>Please report this issue:</p>
     <input [(ngModel)]="reportName" placeholder="Your name" class="form-control mb-2" style="max-width: 400px;">
@@ -535,7 +535,7 @@
     <button class="btn" style="background-color: #F6C45C; color:#3d1a6e" (click)="sendReport()">Send Report</button>
         </div>
         
-        <div class="col-4">
+        <div class="col-12 col-md-4 text-center">
         <img src="assets/error.png" class="error" >
         </div>
 
@@ -543,4 +543,4 @@
     </div>
 }
 
-<app-footer></app-footer>
+<app-footer></app-footer>

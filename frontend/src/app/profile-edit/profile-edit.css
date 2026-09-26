@@ -14,12 +14,12 @@
 }
 
 textarea {
-    width: 75%;
+    width: 100%;
     height: 450px;
     border-radius: 10px;
     padding: 10px;
     border: none;
-    margin-left: 200px ;
+    
     background-color: white;
 }
 
@@ -47,4 +47,9 @@ textarea {
 ::ng-deep .ql-snow .ql-picker-label,
 ::ng-deep .ql-snow .ql-picker-item {
     color: #F6C45C !important;
+}
+@media (max-width: 768px) {
+    .float-wrapper {
+        display: none;
+    }
 }
